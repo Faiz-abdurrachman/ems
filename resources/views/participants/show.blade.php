@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('title', $participant->name)
 
 @section('content')
 <div class="max-w-4xl mx-auto">
     <div class="mb-6">
-        <a href="{{ route('participants.index') }}"
+        <a href="{{ route('admin.participants.index') }}"
            class="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-700 transition-colors">
             <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -21,14 +21,14 @@
                 <p class="mt-0.5 text-sm text-gray-500">Participant Details</p>
             </div>
             <div class="flex items-center gap-3">
-                <a href="{{ route('participants.edit', $participant) }}"
+                <a href="{{ route('admin.participants.edit', $participant) }}"
                    class="inline-flex items-center gap-1.5 rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
                     <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                     </svg>
                     Edit
                 </a>
-                <form method="POST" action="{{ route('participants.destroy', $participant) }}" class="inline delete-form">
+                <form method="POST" action="{{ route('admin.participants.destroy', $participant) }}" class="inline delete-form">
                     @csrf
                     @method('DELETE')
                     <button type="button"

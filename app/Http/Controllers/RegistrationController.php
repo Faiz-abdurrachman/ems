@@ -43,7 +43,7 @@ class RegistrationController extends Controller
         ]);
 
         return redirect()
-            ->route('registrations.index')
+            ->route('admin.registrations.index')
             ->with('success', 'Peserta berhasil didaftarkan ke event.');
     }
 
@@ -70,7 +70,7 @@ class RegistrationController extends Controller
         ]);
 
         return redirect()
-            ->route('registrations.index')
+            ->route('admin.registrations.index')
             ->with('success', 'Registrasi berhasil diperbarui.');
     }
 
@@ -79,7 +79,7 @@ class RegistrationController extends Controller
         $registration->delete();
 
         return redirect()
-            ->route('registrations.index')
+            ->route('admin.registrations.index')
             ->with('success', 'Registrasi berhasil dihapus.');
     }
 }

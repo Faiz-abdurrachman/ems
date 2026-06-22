@@ -32,7 +32,7 @@ class ParticipantController extends Controller
         Participant::create($request->validated());
 
         return redirect()
-            ->route('participants.index')
+            ->route('admin.participants.index')
             ->with('success', 'Peserta berhasil ditambahkan.');
     }
 
@@ -53,7 +53,7 @@ class ParticipantController extends Controller
         $participant->update($request->validated());
 
         return redirect()
-            ->route('participants.index')
+            ->route('admin.participants.index')
             ->with('success', 'Data peserta berhasil diperbarui.');
     }
 
@@ -62,7 +62,7 @@ class ParticipantController extends Controller
         $participant->delete();
 
         return redirect()
-            ->route('participants.index')
+            ->route('admin.participants.index')
             ->with('success', 'Peserta berhasil dihapus.');
     }
 }

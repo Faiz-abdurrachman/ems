@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('title', $event->title)
 
 @section('content')
 <div class="space-y-6">
     <div class="flex flex-wrap items-center justify-between gap-3">
-        <a href="{{ route('events.index') }}" class="inline-flex items-center gap-1.5 text-sm font-medium text-gray-500 hover:text-gray-700 transition-colors">
+        <a href="{{ route('admin.events.index') }}" class="inline-flex items-center gap-1.5 text-sm font-medium text-gray-500 hover:text-gray-700 transition-colors">
             <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
@@ -13,14 +13,14 @@
         </a>
 
         <div class="flex items-center gap-2">
-            <a href="{{ route('events.edit', $event) }}"
+            <a href="{{ route('admin.events.edit', $event) }}"
                 class="inline-flex items-center gap-1.5 rounded-lg border border-gray-300 bg-white px-3.5 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 transition-colors">
                 <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                 </svg>
                 Edit
             </a>
-            <form action="{{ route('events.destroy', $event) }}" method="POST"
+            <form action="{{ route('admin.events.destroy', $event) }}" method="POST"
                 onsubmit="return confirm('Are you sure you want to delete this event? This action cannot be undone.')">
                 @csrf
                 @method('DELETE')

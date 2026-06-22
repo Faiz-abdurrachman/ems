@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('title', 'Dashboard')
 
@@ -78,7 +78,7 @@
         <div class="lg:col-span-2 rounded-xl border border-gray-200 bg-white shadow-sm">
             <div class="flex items-center justify-between border-b border-gray-100 px-6 py-4">
                 <h2 class="text-base font-semibold text-gray-900">Recent Registrations</h2>
-                <a href="{{ route('registrations.index') }}" class="text-sm font-medium text-indigo-600 hover:text-indigo-700 transition-colors">View all</a>
+                <a href="{{ route('admin.registrations.index') }}" class="text-sm font-medium text-indigo-600 hover:text-indigo-700 transition-colors">View all</a>
             </div>
             <div class="overflow-x-auto">
                 @if (isset($recentRegistrations) && count($recentRegistrations) > 0)
@@ -115,13 +115,13 @@
         <div class="rounded-xl border border-gray-200 bg-white shadow-sm">
             <div class="flex items-center justify-between border-b border-gray-100 px-6 py-4">
                 <h2 class="text-base font-semibold text-gray-900">Upcoming Events</h2>
-                <a href="{{ route('events.index') }}" class="text-sm font-medium text-indigo-600 hover:text-indigo-700 transition-colors">View all</a>
+                <a href="{{ route('admin.events.index') }}" class="text-sm font-medium text-indigo-600 hover:text-indigo-700 transition-colors">View all</a>
             </div>
             <div class="divide-y divide-gray-50">
                 @if (isset($upcomingEvents) && count($upcomingEvents) > 0)
                     @foreach ($upcomingEvents as $event)
                         <div class="px-6 py-4 hover:bg-gray-50 transition-colors">
-                            <a href="{{ route('events.show', $event) }}" class="block">
+                            <a href="{{ route('admin.events.show', $event) }}" class="block">
                                 <p class="text-sm font-medium text-gray-900 truncate">{{ $event->title }}</p>
                                 <div class="mt-1 flex items-center gap-3 text-xs text-gray-500">
                                     <span class="inline-flex items-center gap-1">

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('title', 'Events')
 
@@ -9,7 +9,7 @@
             <h2 class="text-2xl font-bold text-gray-900">Events</h2>
             <p class="mt-1 text-sm text-gray-500">Kelola semua event dan pantau pendaftaran</p>
         </div>
-        <a href="{{ route('events.create') }}"
+        <a href="{{ route('admin.events.create') }}"
             class="inline-flex items-center gap-1.5 rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors">
             <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
@@ -20,7 +20,7 @@
 
     <div class="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
         <div class="flex flex-col gap-3 border-b border-gray-100 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
-            <form method="GET" action="{{ route('events.index') }}" class="relative w-full sm:max-w-xs">
+            <form method="GET" action="{{ route('admin.events.index') }}" class="relative w-full sm:max-w-xs">
                 <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                     <svg class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -30,7 +30,7 @@
                     class="block w-full rounded-lg border-gray-300 pl-10 pr-10 text-sm shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                     autocomplete="off">
                 @if(request('search'))
-                    <a href="{{ route('events.index') }}" class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600" aria-label="Hapus pencarian">
+                    <a href="{{ route('admin.events.index') }}" class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600" aria-label="Hapus pencarian">
                         <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
                     </a>
                 @endif
@@ -57,7 +57,7 @@
                             <tr class="hover:bg-gray-50 transition-colors">
                                 <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-500">{{ $loop->iteration + (($events->currentPage() ?? 1) - 1) * ($events->perPage() ?? 10) }}</td>
                                 <td class="whitespace-nowrap px-6 py-4">
-                                    <a href="{{ route('events.show', $event) }}" class="text-sm font-medium text-indigo-600 hover:text-indigo-700">
+                                    <a href="{{ route('admin.events.show', $event) }}" class="text-sm font-medium text-indigo-600 hover:text-indigo-700">
                                         {{ $event->title }}
                                     </a>
                                 </td>
@@ -94,7 +94,7 @@
                                 </td>
                                 <td class="whitespace-nowrap px-6 py-4 text-right">
                                     <div class="flex items-center justify-end gap-1">
-                                        <a href="{{ route('events.show', $event) }}"
+                                        <a href="{{ route('admin.events.show', $event) }}"
                                             class="inline-flex items-center justify-center rounded-md p-1.5 text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition-colors"
                                             aria-label="Lihat event">
                                             <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -102,14 +102,14 @@
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                                             </svg>
                                         </a>
-                                        <a href="{{ route('events.edit', $event) }}"
+                                        <a href="{{ route('admin.events.edit', $event) }}"
                                             class="inline-flex items-center justify-center rounded-md p-1.5 text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition-colors"
                                             aria-label="Edit event">
                                             <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                                             </svg>
                                         </a>
-                                        <form method="POST" action="{{ route('events.destroy', $event) }}" class="inline delete-form">
+                                        <form method="POST" action="{{ route('admin.events.destroy', $event) }}" class="inline delete-form">
                                             @csrf
                                             @method('DELETE')
                                             <button type="button"
@@ -137,7 +137,7 @@
                         {{ request('search') ? 'Tidak ada event yang cocok dengan pencarian Anda.' : 'Mulai dengan membuat event pertama Anda.' }}
                     </p>
                     @if (!request('search'))
-                        <a href="{{ route('events.create') }}"
+                        <a href="{{ route('admin.events.create') }}"
                             class="mt-4 inline-flex items-center gap-1.5 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700 transition-colors">
                             <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />

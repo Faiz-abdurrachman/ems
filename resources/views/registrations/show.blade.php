@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('title', 'Registration Detail')
 
 @section('content')
 <div class="max-w-3xl mx-auto">
     <div class="mb-6">
-        <a href="{{ route('registrations.index') }}"
+        <a href="{{ route('admin.registrations.index') }}"
            class="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-700 transition-colors">
             <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -21,14 +21,14 @@
                 <p class="mt-0.5 text-sm text-gray-500">Registration #{{ $registration->id }}</p>
             </div>
             <div class="flex items-center gap-3">
-                <a href="{{ route('registrations.edit', $registration) }}"
+                <a href="{{ route('admin.registrations.edit', $registration) }}"
                    class="inline-flex items-center gap-1.5 rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
                     <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                     </svg>
                     Edit
                 </a>
-                <form method="POST" action="{{ route('registrations.destroy', $registration) }}" class="inline delete-form">
+                <form method="POST" action="{{ route('admin.registrations.destroy', $registration) }}" class="inline delete-form">
                     @csrf
                     @method('DELETE')
                     <button type="button"
@@ -47,7 +47,7 @@
             <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <div class="rounded-lg border border-gray-100 bg-gray-50/50 p-4">
                     <h3 class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3">Event</h3>
-                    <a href="{{ route('events.show', $registration->event) }}" class="block group">
+                    <a href="{{ route('admin.events.show', $registration->event) }}" class="block group">
                         <p class="text-sm font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">
                             {{ $registration->event->title ?? '—' }}
                         </p>
@@ -62,7 +62,7 @@
 
                 <div class="rounded-lg border border-gray-100 bg-gray-50/50 p-4">
                     <h3 class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3">Participant</h3>
-                    <a href="{{ route('participants.show', $registration->participant) }}" class="block group">
+                    <a href="{{ route('admin.participants.show', $registration->participant) }}" class="block group">
                         <p class="text-sm font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">
                             {{ $registration->participant->name ?? '—' }}
                         </p>

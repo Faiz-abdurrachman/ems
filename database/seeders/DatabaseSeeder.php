@@ -5,12 +5,20 @@ namespace Database\Seeders;
 use App\Models\Event;
 use App\Models\Participant;
 use App\Models\Registration;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
+        User::create([
+            'name' => 'Admin EMS',
+            'email' => 'admin@ems.test',
+            'password' => bcrypt('password'),
+        ]);
+
+
         $events = [
             [
                 'title' => 'Workshop Web Development',

@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('title', 'Create Event')
 
 @section('content')
 <div class="mx-auto max-w-2xl">
     <div class="mb-6">
-        <a href="{{ route('events.index') }}" class="inline-flex items-center gap-1.5 text-sm font-medium text-gray-500 hover:text-gray-700 transition-colors">
+        <a href="{{ route('admin.events.index') }}" class="inline-flex items-center gap-1.5 text-sm font-medium text-gray-500 hover:text-gray-700 transition-colors">
             <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
@@ -19,7 +19,7 @@
             <p class="mt-1 text-sm text-gray-500">Fill in the details below to create a new event.</p>
         </div>
 
-        <form action="{{ route('events.store') }}" method="POST" class="px-6 py-5 space-y-5">
+        <form action="{{ route('admin.events.store') }}" method="POST" class="px-6 py-5 space-y-5">
             @csrf
 
             <div>
@@ -87,7 +87,7 @@
             </div>
 
             <div class="flex items-center justify-end gap-3 border-t border-gray-100 pt-5">
-                <a href="{{ route('events.index') }}" class="inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors">
+                <a href="{{ route('admin.events.index') }}" class="inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors">
                     Cancel
                 </a>
                 <button type="submit" class="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors">

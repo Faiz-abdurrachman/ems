@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('title', 'New Registration')
 
 @section('content')
 <div class="max-w-2xl mx-auto">
     <div class="mb-6">
-        <a href="{{ route('registrations.index') }}"
+        <a href="{{ route('admin.registrations.index') }}"
            class="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-700 transition-colors">
             <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -20,7 +20,7 @@
             <p class="mt-0.5 text-sm text-gray-500">Register a participant to an event.</p>
         </div>
 
-        <form action="{{ route('registrations.store') }}" method="POST" class="px-6 py-5 space-y-5">
+        <form action="{{ route('admin.registrations.store') }}" method="POST" class="px-6 py-5 space-y-5">
             @csrf
 
             <div>
@@ -56,7 +56,7 @@
             </div>
 
             <div class="flex items-center justify-end gap-3 pt-2">
-                <a href="{{ route('registrations.index') }}"
+                <a href="{{ route('admin.registrations.index') }}"
                    class="rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
                     Cancel
                 </a>
