@@ -20,6 +20,7 @@ class StoreEventRequest extends FormRequest
             'location' => ['required', 'string', 'max:255'],
             'quota' => ['required', 'integer', 'min:1'],
             'status' => ['required', 'in:upcoming,ongoing,completed,cancelled'],
+            'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,webp', 'max:5120'],
         ];
     }
 
@@ -34,6 +35,9 @@ class StoreEventRequest extends FormRequest
             'quota.integer' => 'Kuota harus berupa angka.',
             'quota.min' => 'Kuota minimal 1 peserta.',
             'status.required' => 'Status event wajib dipilih.',
+            'image.image' => 'File harus berupa gambar.',
+            'image.mimes' => 'Format gambar harus JPEG, PNG, atau WebP.',
+            'image.max' => 'Ukuran gambar maksimal 5 MB.',
         ];
     }
 }

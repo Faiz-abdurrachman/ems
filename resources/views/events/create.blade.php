@@ -19,8 +19,15 @@
             <p class="mt-1 text-sm text-gray-500">Fill in the details below to create a new event.</p>
         </div>
 
-        <form action="{{ route('admin.events.store') }}" method="POST" class="px-6 py-5 space-y-5">
+        <form action="{{ route('admin.events.store') }}" method="POST" class="px-6 py-5 space-y-5" enctype="multipart/form-data">
             @csrf
+
+            <div>
+                <label for="image" class="block text-sm font-medium text-gray-700">Poster Event <span class="text-gray-400 font-normal">(opsional)</span></label>
+                <input type="file" name="image" id="image" accept="image/*"
+                    class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100 {{ $errors->has('image') ? 'border-red-300' : '' }}">
+                @error('image')<p class="mt-1 text-sm text-red-600">{{ $message }}</p>@enderror
+            </div>
 
             <div>
                 <label for="title" class="block text-sm font-medium text-gray-700">Title</label>

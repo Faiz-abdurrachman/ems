@@ -4,13 +4,14 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ParticipantController;
+use App\Http\Controllers\PublicEventController;
 use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', fn () => redirect()->route('home'))->name('welcome');
-
 # Public Routes
-Route::get('/events', fn () => 'Coming Soon') ->name('home');
+Route::get('/', [PublicEventController::class, 'index'])->name('home');
+Route::get('/events/{event}', [PublicEventController::class, 'show'])->name('events.show');
+Route::post('/events/{event}/register', [PublicEventController::class, 'register'])->name('events.register');
 
 # Auth Routes
 Route::middleware('guest')->group(function () {
