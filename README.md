@@ -40,7 +40,7 @@ Buka **http://127.0.0.1:8080**
 
 | Fitur | Deskripsi |
 |---|---|
-| 🔐 **Auth** | Login/logout admin dengan middleware protection |
+| 🎓 **Mahasiswa** | Data peserta dengan NIM (unique) + Jurusan |
 | 🌐 **Public Landing** | Halaman publik dengan grid event upcoming |
 | 📝 **Pendaftaran** | Peserta bisa daftar mandiri via form publik |
 | 🛑 **Kuota** | Cek kuota otomatis — mencegah overbooking |
