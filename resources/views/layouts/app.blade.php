@@ -7,6 +7,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="h-full">
+    <div id="mobile-backdrop" class="fixed inset-0 z-10 bg-black/50 hidden lg:hidden" onclick="closeSidebar()"></div>
     <div class="flex h-full">
         <x-sidebar />
 
@@ -29,13 +30,16 @@
 
             <main class="flex-1 overflow-y-auto p-6">
                 @if (session('success'))
-                    <div class="mb-6 rounded-lg bg-emerald-50 border border-emerald-200 p-4">
+                    <div id="flash-message" class="mb-6 rounded-lg bg-emerald-50 border border-emerald-200 p-4 flex items-center justify-between">
                         <div class="flex items-center gap-2">
                             <svg class="h-5 w-5 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             <p class="text-sm font-medium text-emerald-800">{{ session('success') }}</p>
                         </div>
+                        <button type="button" onclick="this.parentElement.remove()" class="text-emerald-400 hover:text-emerald-600 shrink-0" aria-label="Tutup notifikasi">
+                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                        </button>
                     </div>
                 @endif
 
@@ -63,9 +67,30 @@
     </div>
 
     <script>
+        var backdrop = document.getElementById('mobile-backdrop');
+        var sidebar = document.getElementById('sidebar');
         document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
-            document.getElementById('sidebar')?.classList.toggle('-translate-x-full');
-            document.getElementById('sidebar')?.classList.toggle('translate-x-0');
+            sidebar?.classList.toggle('-translate-x-full');
+            sidebar?.classList.toggle('translate-x-0');
+            backdrop?.classList.toggle('hidden');
+        });
+        function closeSidebar() {
+            sidebar?.classList.add('-translate-x-full');
+            sidebar?.classList.remove('translate-x-0');
+            backdrop?.classList.add('hidden');
+        }
+
+        document.querySelectorAll('form[method="POST"]').forEach(function(form) {
+            form.addEventListener('submit', function() {
+                var btn = this.querySelector('button[type="submit"]');
+                if (btn && !btn.dataset.loading) {
+                    btn.dataset.loading = 'true';
+                    btn.disabled = true;
+                    var orig = btn.innerHTML;
+                    btn.innerHTML = '<svg class="animate-spin h-4 w-4 mr-1.5" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>' + btn.textContent.replace(/\s+/g,' ').trim();
+                }
+                return true;
+            });
         });
     </script>
 </body>

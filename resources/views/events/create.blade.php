@@ -13,7 +13,7 @@
         </a>
     </div>
 
-    <div class="rounded-2xl border border-gray-200 bg-white shadow-sm">
+    <div class="rounded-xl border border-gray-200 bg-white shadow-sm">
         <div class="border-b border-gray-100 px-6 py-5">
             <h2 class="text-lg font-semibold text-gray-900">Create New Event</h2>
             <p class="mt-1 text-sm text-gray-500">Fill in the details below to create a new event.</p>
@@ -76,10 +76,10 @@
                 <label for="status" class="block text-sm font-medium text-gray-700">Status</label>
                 <select name="status" id="status"
                     class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm {{ $errors->has('status') ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : '' }}">
-                    <option value="upcoming" {{ old('status') == 'upcoming' ? 'selected' : '' }}>Upcoming</option>
-                    <option value="ongoing" {{ old('status') == 'ongoing' ? 'selected' : '' }}>Ongoing</option>
-                    <option value="completed" {{ old('status') == 'completed' ? 'selected' : '' }}>Completed</option>
-                    <option value="cancelled" {{ old('status') == 'cancelled' ? 'selected' : '' }}>Cancelled</option>
+                    <option value="upcoming" {{ old('status') == 'upcoming' ? 'selected' : '' }}>Akan Datang</option>
+                    <option value="ongoing" {{ old('status') == 'ongoing' ? 'selected' : '' }}>Berlangsung</option>
+                    <option value="completed" {{ old('status') == 'completed' ? 'selected' : '' }}>Selesai</option>
+                    <option value="cancelled" {{ old('status') == 'cancelled' ? 'selected' : '' }}>Dibatalkan</option>
                 </select>
                 @error('status')
                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>

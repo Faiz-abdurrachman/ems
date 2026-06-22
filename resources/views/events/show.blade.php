@@ -44,15 +44,15 @@
                         @php
                             $statusColors = [
                                 'upcoming' => 'bg-blue-50 text-blue-700 ring-blue-600/20',
-                                'ongoing' => 'bg-green-50 text-green-700 ring-green-600/20',
-                                'completed' => 'bg-gray-50 text-gray-600 ring-gray-500/20',
+                                'ongoing' => 'bg-emerald-50 text-emerald-700 ring-emerald-600/20',
+                                'completed' => 'bg-gray-100 text-gray-700 ring-gray-500/20',
                                 'cancelled' => 'bg-red-50 text-red-700 ring-red-600/20',
                             ];
                             $statusLabels = [
-                                'upcoming' => 'Upcoming',
-                                'ongoing' => 'Ongoing',
-                                'completed' => 'Completed',
-                                'cancelled' => 'Cancelled',
+                                'upcoming' => 'Akan Datang',
+                                'ongoing' => 'Berlangsung',
+                                'completed' => 'Selesai',
+                                'cancelled' => 'Dibatalkan',
                             ];
                             $color = $statusColors[$event->status] ?? $statusColors['upcoming'];
                             $label = $statusLabels[$event->status] ?? $event->status;
@@ -61,7 +61,7 @@
                             {{ $label }}
                         </span>
                         <span class="text-sm text-gray-500">
-                            {{ $event->registrations_count ?? 0 }} / {{ $event->quota }} registered
+                            {{ $event->registrations_count ?? 0 }} / {{ $event->quota }} terdaftar
                         </span>
                     </div>
                 </div>
@@ -79,16 +79,16 @@
                     <dd class="mt-1 text-sm text-gray-900">{{ $event->location }}</dd>
                 </div>
                 <div>
-                    <dt class="text-xs font-medium uppercase tracking-wider text-gray-500">Quota</dt>
-                    <dd class="mt-1 text-sm text-gray-900">{{ $event->quota }} participants</dd>
+                    <dt class="text-xs font-medium uppercase tracking-wider text-gray-500">Kuota</dt>
+                    <dd class="mt-1 text-sm text-gray-900">{{ $event->quota }} peserta</dd>
                 </div>
                 <div>
-                    <dt class="text-xs font-medium uppercase tracking-wider text-gray-500">Registration Count</dt>
+                    <dt class="text-xs font-medium uppercase tracking-wider text-gray-500">Jumlah Registrasi</dt>
                     <dd class="mt-1 text-sm font-semibold text-gray-900">{{ $event->registrations_count ?? 0 }} / {{ $event->quota }}</dd>
                 </div>
                 @if ($event->description)
                     <div class="sm:col-span-2">
-                        <dt class="text-xs font-medium uppercase tracking-wider text-gray-500">Description</dt>
+                        <dt class="text-xs font-medium uppercase tracking-wider text-gray-500">Deskripsi</dt>
                         <dd class="mt-1 text-sm text-gray-700 whitespace-pre-wrap">{{ $event->description }}</dd>
                     </div>
                 @endif
@@ -98,7 +98,7 @@
         @if ($event->quota > 0)
             <div class="border-t border-gray-100 px-6 py-3">
                 <div class="flex items-center gap-3">
-                    <span class="text-xs font-medium text-gray-500">Registration progress</span>
+                    <span class="text-xs font-medium text-gray-500">Progres registrasi</span>
                     <div class="h-2 flex-1 overflow-hidden rounded-full bg-gray-100">
                         <div class="h-full rounded-full bg-indigo-500 transition-all"
                             style="width: {{ min((($event->registrations_count ?? 0) / $event->quota) * 100, 100) }}%"></div>
@@ -111,7 +111,7 @@
 
     <div class="rounded-2xl border border-gray-200 bg-white shadow-sm">
         <div class="flex items-center justify-between border-b border-gray-100 px-6 py-4">
-            <h3 class="text-base font-semibold text-gray-900">Registered Participants</h3>
+            <h3 class="text-base font-semibold text-gray-900">Peserta Terdaftar</h3>
             <span class="text-sm text-gray-500">{{ $event->registrations->count() }} registered</span>
         </div>
 

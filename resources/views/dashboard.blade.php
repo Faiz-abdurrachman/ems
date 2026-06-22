@@ -5,7 +5,7 @@
 @section('content')
 <div class="space-y-6">
     <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        <div class="relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+        <div class="relative overflow-hidden rounded-xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
             <div class="absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-indigo-50 opacity-50"></div>
             <div class="relative">
                 <div class="flex items-center justify-between">
@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <div class="relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+        <div class="relative overflow-hidden rounded-xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
             <div class="absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-emerald-50 opacity-50"></div>
             <div class="relative">
                 <div class="flex items-center justify-between">
@@ -39,7 +39,7 @@
             </div>
         </div>
 
-        <div class="relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+        <div class="relative overflow-hidden rounded-xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
             <div class="absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-amber-50 opacity-50"></div>
             <div class="relative">
                 <div class="flex items-center justify-between">
@@ -56,7 +56,7 @@
             </div>
         </div>
 
-        <div class="relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+        <div class="relative overflow-hidden rounded-xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
             <div class="absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-rose-50 opacity-50"></div>
             <div class="relative">
                 <div class="flex items-center justify-between">
@@ -75,7 +75,7 @@
     </div>
 
     <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
-        <div class="lg:col-span-2 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <div class="lg:col-span-2 rounded-xl border border-gray-200 bg-white shadow-sm">
             <div class="flex items-center justify-between border-b border-gray-100 px-6 py-4">
                 <h2 class="text-base font-semibold text-gray-900">Recent Registrations</h2>
                 <a href="{{ route('registrations.index') }}" class="text-sm font-medium text-indigo-600 hover:text-indigo-700 transition-colors">View all</a>
@@ -106,13 +106,13 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                         </svg>
                         <p class="mt-3 text-sm font-medium text-gray-500">Belum ada data</p>
-                        <p class="mt-1 text-xs text-gray-400">Registrations will appear here</p>
+                        <p class="mt-1 text-xs text-gray-400">Registrasi akan muncul di sini</p>
                     </div>
                 @endif
             </div>
         </div>
 
-        <div class="rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <div class="rounded-xl border border-gray-200 bg-white shadow-sm">
             <div class="flex items-center justify-between border-b border-gray-100 px-6 py-4">
                 <h2 class="text-base font-semibold text-gray-900">Upcoming Events</h2>
                 <a href="{{ route('events.index') }}" class="text-sm font-medium text-indigo-600 hover:text-indigo-700 transition-colors">View all</a>
@@ -152,7 +152,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
                         <p class="mt-3 text-sm font-medium text-gray-500">Belum ada data</p>
-                        <p class="mt-1 text-xs text-gray-400">Upcoming events will appear here</p>
+                        <p class="mt-1 text-xs text-gray-400">Event mendatang akan muncul di sini</p>
                     </div>
                 @endif
             </div>
