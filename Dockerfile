@@ -14,6 +14,8 @@ COPY . .
 
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
+RUN cp .env.example .env
+
 RUN composer install --no-dev --optimize-autoloader --no-interaction && \
     npm install && npm run build && \
     php artisan key:generate && \
