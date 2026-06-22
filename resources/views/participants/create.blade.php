@@ -44,7 +44,27 @@
             </div>
 
             <div>
-                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1.5">Phone</label>
+                <label for="nim" class="block text-sm font-medium text-gray-700 mb-1.5">NIM</label>
+                <input type="text" name="nim" id="nim" value="{{ old('nim') }}"
+                       class="block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-sm @error('nim') border-red-300 focus:border-red-500 focus:ring-red-200 @enderror"
+                       placeholder="Masukkan NIM">
+                @error('nim')<p class="mt-1.5 text-sm text-red-600">{{ $message }}</p>@enderror
+            </div>
+
+            <div>
+                <label for="jurusan" class="block text-sm font-medium text-gray-700 mb-1.5">Jurusan</label>
+                <select name="jurusan" id="jurusan"
+                        class="block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-sm @error('jurusan') border-red-300 focus:border-red-500 focus:ring-red-200 @enderror">
+                    <option value="">Pilih Jurusan</option>
+                    @foreach(['Teknik Informatika','Sistem Informasi','Manajemen Informatika','Teknik Komputer','Teknologi Informasi'] as $j)
+                        <option value="{{ $j }}" {{ old('jurusan') == $j ? 'selected' : '' }}>{{ $j }}</option>
+                    @endforeach
+                </select>
+                @error('jurusan')<p class="mt-1.5 text-sm text-red-600">{{ $message }}</p>@enderror
+            </div>
+
+            <div>
+                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1.5">Telepon <span class="text-gray-400 font-normal">(opsional)</span></label>
                 <input type="text" name="phone" id="phone" value="{{ old('phone') }}"
                        class="block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-sm @error('phone') border-red-300 focus:border-red-500 focus:ring-red-200 @enderror"
                        placeholder="Enter phone number">

@@ -58,6 +58,8 @@
                         <th scope="col" class="w-12 px-6 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-gray-500">#</th>
                         <th scope="col" class="px-6 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-gray-500">Name</th>
                         <th scope="col" class="px-6 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-gray-500">Email</th>
+                        <th scope="col" class="px-6 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-gray-500">NIM</th>
+                        <th scope="col" class="px-6 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-gray-500">Jurusan</th>
                         <th scope="col" class="px-6 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-gray-500">Phone</th>
                         <th scope="col" class="px-6 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-gray-500">Events Joined</th>
                         <th scope="col" class="px-6 py-3.5 text-right text-xs font-semibold uppercase tracking-wider text-gray-500">Actions</th>
@@ -69,6 +71,8 @@
                             <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-400">{{ $loop->iteration + (($participants->currentPage() - 1) * $participants->perPage()) }}</td>
                             <td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-900">{{ $participant->name }}</td>
                             <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-600">{{ $participant->email }}</td>
+                            <td class="whitespace-nowrap px-6 py-4 text-sm font-mono text-gray-700">{{ $participant->nim ?: '—' }}</td>
+                            <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-600">{{ $participant->jurusan ?: '—' }}</td>
                             <td class="whitespace-nowrap px-6 py-4 text-sm text-gray-600 max-w-[120px] truncate" title="{{ $participant->phone }}">{{ $participant->phone ?: '—' }}</td>
                             <td class="whitespace-nowrap px-6 py-4 text-sm">
                                 <span class="inline-flex items-center rounded-full bg-indigo-50 px-2.5 py-0.5 text-xs font-medium text-indigo-700">

@@ -54,6 +54,14 @@
                     <dd class="mt-1 text-sm text-gray-700">{{ $participant->email }}</dd>
                 </div>
                 <div>
+                    <dt class="text-xs font-medium uppercase tracking-wider text-gray-400">NIM</dt>
+                    <dd class="mt-1 text-sm font-mono text-gray-900">{{ $participant->nim ?: '—' }}</dd>
+                </div>
+                <div>
+                    <dt class="text-xs font-medium uppercase tracking-wider text-gray-400">Jurusan</dt>
+                    <dd class="mt-1 text-sm text-gray-700">{{ $participant->jurusan ?: '—' }}</dd>
+                </div>
+                <div>
                     <dt class="text-xs font-medium uppercase tracking-wider text-gray-400">Phone</dt>
                     <dd class="mt-1 text-sm text-gray-700">{{ $participant->phone ?: '—' }}</dd>
                 </div>

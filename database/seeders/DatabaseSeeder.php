@@ -89,21 +89,21 @@ class DatabaseSeeder extends Seeder
         }
 
         $participants = [
-            ['name' => 'Andi Pratama', 'email' => 'andi@student.edu', 'phone' => '081234567890'],
-            ['name' => 'Bunga Lestari', 'email' => 'bunga@student.edu', 'phone' => '081234567891'],
-            ['name' => 'Citra Dewi', 'email' => 'citra@student.edu', 'phone' => '081234567892'],
-            ['name' => 'Dimas Ardiansyah', 'email' => 'dimas@student.edu', 'phone' => '081234567893'],
-            ['name' => 'Eka Putri', 'email' => 'eka@student.edu', 'phone' => '081234567894'],
-            ['name' => 'Fajar Nugroho', 'email' => 'fajar@student.edu', 'phone' => '081234567895'],
-            ['name' => 'Gina Amelia', 'email' => 'gina@student.edu', 'phone' => '081234567896'],
-            ['name' => 'Hendra Setiawan', 'email' => 'hendra@student.edu', 'phone' => '081234567897'],
-            ['name' => 'Intan Permatasari', 'email' => 'intan@student.edu', 'phone' => '081234567898'],
-            ['name' => 'Joko Widodo Jr.', 'email' => 'joko@student.edu', 'phone' => '081234567899'],
-            ['name' => 'Karina Safira', 'email' => 'karina@student.edu', 'phone' => '081234567800'],
-            ['name' => 'Lutfi Hakim', 'email' => 'lutfi@student.edu', 'phone' => '081234567801'],
-            ['name' => 'Maya Sari', 'email' => 'maya@student.edu', 'phone' => '081234567802'],
-            ['name' => 'Nico Pratomo', 'email' => 'nico@student.edu', 'phone' => '081234567803'],
-            ['name' => 'Olivia Putri', 'email' => 'olivia@student.edu', 'phone' => '081234567804'],
+            ['name' => 'Andi Pratama',       'nim' => '241111001', 'jurusan' => 'Teknik Informatika',      'email' => 'andi@student.edu',    'phone' => '081234567890'],
+            ['name' => 'Bunga Lestari',      'nim' => '241111002', 'jurusan' => 'Sistem Informasi',        'email' => 'bunga@student.edu',   'phone' => '081234567891'],
+            ['name' => 'Citra Dewi',         'nim' => '241111003', 'jurusan' => 'Manajemen Informatika',   'email' => 'citra@student.edu',   'phone' => '081234567892'],
+            ['name' => 'Dimas Ardiansyah',   'nim' => '241111004', 'jurusan' => 'Teknik Informatika',      'email' => 'dimas@student.edu',   'phone' => '081234567893'],
+            ['name' => 'Eka Putri',          'nim' => '241111005', 'jurusan' => 'Sistem Informasi',        'email' => 'eka@student.edu',     'phone' => '081234567894'],
+            ['name' => 'Fajar Nugroho',      'nim' => '241111006', 'jurusan' => 'Teknik Komputer',         'email' => 'fajar@student.edu',   'phone' => '081234567895'],
+            ['name' => 'Gina Amelia',        'nim' => '241111007', 'jurusan' => 'Manajemen Informatika',   'email' => 'gina@student.edu',    'phone' => '081234567896'],
+            ['name' => 'Hendra Setiawan',    'nim' => '241111008', 'jurusan' => 'Teknik Informatika',      'email' => 'hendra@student.edu',  'phone' => '081234567897'],
+            ['name' => 'Intan Permatasari',  'nim' => '241111009', 'jurusan' => 'Teknologi Informasi',     'email' => 'intan@student.edu',   'phone' => '081234567898'],
+            ['name' => 'Joko Widodo Jr.',    'nim' => '241111010', 'jurusan' => 'Sistem Informasi',        'email' => 'joko@student.edu',    'phone' => '081234567899'],
+            ['name' => 'Karina Safira',      'nim' => '241111011', 'jurusan' => 'Teknik Komputer',         'email' => 'karina@student.edu',  'phone' => '081234567800'],
+            ['name' => 'Lutfi Hakim',        'nim' => '241111012', 'jurusan' => 'Teknologi Informasi',     'email' => 'lutfi@student.edu',   'phone' => '081234567801'],
+            ['name' => 'Maya Sari',          'nim' => '241111013', 'jurusan' => 'Teknik Informatika',      'email' => 'maya@student.edu',    'phone' => '081234567802'],
+            ['name' => 'Nico Pratomo',       'nim' => '241111014', 'jurusan' => 'Sistem Informasi',        'email' => 'nico@student.edu',    'phone' => '081234567803'],
+            ['name' => 'Olivia Putri',       'nim' => '241111015', 'jurusan' => 'Manajemen Informatika',   'email' => 'olivia@student.edu',  'phone' => '081234567804'],
         ];
 
         foreach ($participants as $data) {

@@ -21,6 +21,8 @@ class UpdateParticipantRequest extends FormRequest
                 'email',
                 Rule::unique('participants', 'email')->ignore($this->route('participant')),
             ],
+            'nim' => ['required', 'string', 'max:20', Rule::unique('participants', 'nim')->ignore($this->route('participant'))],
+            'jurusan' => ['required', 'string', 'max:100'],
             'phone' => ['nullable', 'string', 'max:20'],
         ];
     }
@@ -31,7 +33,10 @@ class UpdateParticipantRequest extends FormRequest
             'name.required' => 'Nama peserta wajib diisi.',
             'email.required' => 'Email peserta wajib diisi.',
             'email.email' => 'Format email tidak valid.',
-            'email.unique' => 'Email sudah terdaftar. Gunakan email lain.',
+            'email.unique' => 'Email sudah terdaftar.',
+            'nim.required' => 'NIM wajib diisi.',
+            'nim.unique' => 'NIM sudah terdaftar.',
+            'jurusan.required' => 'Jurusan wajib dipilih.',
         ];
     }
 }
