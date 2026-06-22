@@ -1,0 +1,11 @@
+[build]
+builder = "nixpacks"
+buildCommand = "composer install --no-dev --optimize-autoloader && npm install && npm run build && php artisan key:generate && touch database/database.sqlite && php artisan migrate --force && php artisan db:seed --force"
+
+[deploy]
+startCommand = "php artisan serve --host=0.0.0.0 --port=8080"
+healthcheckPath = "/"
+
+[build.nixpacks]
+providers = ["@railwayapp/nixpacks-provider-php"]
+aptPackages = ["php", "php-sqlite3", "composer", "nodejs", "npm"]

@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: ems
+    runtime: docker
+    plan: free
+    repo: https://github.com/Faiz-abdurrachman/ems
+    branch: main
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: APP_NAME
+        value: EMS
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: DB_CONNECTION
+        value: sqlite
