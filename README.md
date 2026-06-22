@@ -1,58 +1,94 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🎓 Event Management System (EMS)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> **Campus Event & Registration Manager**  
+> Laravel 13 | Tailwind CSS v4 | SQLite | Railway Deploy
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+## 🚀 Quick Start
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+cd ems
+npm install && npm run build
+touch database/database.sqlite
+PHP_INI_SCAN_DIR="$HOME/.php/conf.d" php artisan migrate --force
+PHP_INI_SCAN_DIR="$HOME/.php/conf.d" php artisan db:seed --force
+PHP_INI_SCAN_DIR="$HOME/.php/conf.d" php artisan serve --port=8080
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+Buka **http://127.0.0.1:8080**
 
-## Contributing
+> ⚠️ **PENTING:** Prefix `PHP_INI_SCAN_DIR="$HOME/.php/conf.d"` wajib karena SQLite module diinstall manual di `~/.php/modules/`.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## 🔑 Credentials
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+| Role | Email | Password |
+|---|---|---|
+| Admin | `admin@ems.test` | `password` |
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 🌐 Live Demo
 
-## License
+**https://ems-production-8c0e.up.railway.app/**
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+## 📖 Fitur
+
+| Fitur | Deskripsi |
+|---|---|
+| 🔐 **Auth** | Login/logout admin dengan middleware protection |
+| 🌐 **Public Landing** | Halaman publik dengan grid event upcoming |
+| 📝 **Pendaftaran** | Peserta bisa daftar mandiri via form publik |
+| 🛑 **Kuota** | Cek kuota otomatis — mencegah overbooking |
+| 📂 **Kategori** | Filter event per kategori (Workshop, Seminar, Lomba, dll) |
+| 📊 **Export CSV** | Download daftar peserta per event |
+| ✅ **Check-in** | Presensi — tandai hadir/batal per peserta |
+| 🖼️ **Gambar** | Upload poster/flyer event |
+| 🔍 **Search** | Cari event/peserta di semua halaman |
+| 📄 **Pagination** | 10 data per halaman |
+| 📱 **Responsive** | Tailwind CSS v4 — mobile-friendly |
+
+---
+
+## 📁 Dokumentasi
+
+| File | Isi |
+|---|---|
+| `_AI_CONTEXT.md` | Full project context (PRD, SRS, ERD, semua route, semua file) |
+| `LAPORAN_AKADEMIK.md` | Laporan BAB 1-9 untuk submisi kampus |
+| `DOKUMENTASI_TEKNIS.md` | Instalasi, struktur folder, source code detail |
+| `WORKFLOW.md` | Panduan alur aplikasi + testing + script demo |
+| `SCRIPT_PRESENTASI.md` | Script presentasi 10 menit + 20 Q&A dosen |
+
+---
+
+## 🏗️ Tech Stack
+
+| Layer | Teknologi |
+|---|---|
+| Backend | PHP 8.3, Laravel 13 |
+| Database | SQLite |
+| ORM | Eloquent (100%, zero raw SQL) |
+| Frontend | Blade + Tailwind CSS v4 |
+| Bundler | Vite |
+| Deploy | Railway (Docker) |
+
+---
+
+## 📊 Database
+
+```
+events ──1:N── registrations ──N:1── participants
+  │                                      │
+  └──N:1── categories
+```
+
+---
+
+## 🧪 Testing
+
+**32 tests, 0 bugs** — semua route dan fitur terverifikasi.
