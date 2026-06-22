@@ -9,9 +9,8 @@ RUN apt-get update && apt-get install -y \
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-COPY . /app
-
-WORKDIR "/app/Semester 4/Rekayasa Web/slide22/ems"
+WORKDIR /app
+COPY . .
 
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
