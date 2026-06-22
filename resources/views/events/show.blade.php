@@ -12,7 +12,21 @@
             Back to Events
         </a>
 
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-2 flex-wrap">
+            <a href="{{ route('admin.events.check-in', $event) }}"
+                class="inline-flex items-center gap-1.5 rounded-lg border border-emerald-300 bg-white px-3.5 py-2 text-sm font-medium text-emerald-700 shadow-sm hover:bg-emerald-50 transition-colors">
+                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                Presensi
+            </a>
+            <a href="{{ route('admin.events.export', $event) }}"
+                class="inline-flex items-center gap-1.5 rounded-lg border border-indigo-300 bg-white px-3.5 py-2 text-sm font-medium text-indigo-700 shadow-sm hover:bg-indigo-50 transition-colors">
+                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+                Export CSV
+            </a>
             <a href="{{ route('admin.events.edit', $event) }}"
                 class="inline-flex items-center gap-1.5 rounded-lg border border-gray-300 bg-white px-3.5 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 transition-colors">
                 <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -20,16 +34,15 @@
                 </svg>
                 Edit
             </a>
-            <form action="{{ route('admin.events.destroy', $event) }}" method="POST"
-                onsubmit="return confirm('Are you sure you want to delete this event? This action cannot be undone.')">
+            <form method="POST" action="{{ route('admin.events.destroy', $event) }}" class="inline delete-form">
                 @csrf
                 @method('DELETE')
-                <button type="submit"
+                <button type="button" onclick="confirmDelete(this)"
                     class="inline-flex items-center gap-1.5 rounded-lg border border-red-300 bg-white px-3.5 py-2 text-sm font-medium text-red-600 shadow-sm hover:bg-red-50 transition-colors">
                     <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                     </svg>
-                    Delete
+                    Hapus
                 </button>
             </form>
         </div>
@@ -60,6 +73,9 @@
                         <span class="inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium ring-1 ring-inset {{ $color }}">
                             {{ $label }}
                         </span>
+                        @if($event->category)
+                            <span class="inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium ring-1 ring-inset bg-purple-50 text-purple-700 ring-purple-600/20">{{ $event->category->name }}</span>
+                        @endif
                         <span class="text-sm text-gray-500">
                             {{ $event->registrations_count ?? 0 }} / {{ $event->quota }} terdaftar
                         </span>

@@ -21,6 +21,7 @@ class UpdateEventRequest extends FormRequest
             'quota' => ['required', 'integer', 'min:1'],
             'status' => ['required', 'in:upcoming,ongoing,completed,cancelled'],
             'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,webp', 'max:5120'],
+            'category_id' => ['nullable', 'exists:categories,id'],
         ];
     }
 

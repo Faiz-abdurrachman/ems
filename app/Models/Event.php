@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Event extends Model
@@ -15,12 +16,18 @@ class Event extends Model
         'quota',
         'status',
         'image',
+        'category_id',
     ];
 
     protected $casts = [
         'event_date' => 'datetime',
         'quota' => 'integer',
     ];
+
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class);
+    }
 
     public function registrations(): HasMany
     {

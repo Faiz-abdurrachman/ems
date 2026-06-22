@@ -27,4 +27,7 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('events', EventController::class);
     Route::resource('participants', ParticipantController::class);
     Route::resource('registrations', RegistrationController::class);
+    Route::post('registrations/{registration}/toggle-attendance', [RegistrationController::class, 'toggleAttendance'])->name('registrations.toggle-attendance');
+    Route::get('events/{event}/check-in', [RegistrationController::class, 'checkIn'])->name('events.check-in');
+    Route::get('events/{event}/export', [RegistrationController::class, 'export'])->name('events.export');
 });

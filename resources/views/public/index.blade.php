@@ -19,6 +19,17 @@
         </form>
     </div>
 
+    @if(isset($categories) && $categories->isNotEmpty())
+        <div class="mx-auto max-w-7xl px-6 -mt-4 mb-6">
+            <div class="flex flex-wrap justify-center gap-2">
+                <a href="{{ route('home') }}" class="rounded-full px-4 py-1.5 text-xs font-medium {{ !request('category') ? 'bg-indigo-600 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200' }} transition-colors">Semua</a>
+                @foreach($categories as $cat)
+                    <a href="{{ route('home', ['category' => $cat->id]) }}" class="rounded-full px-4 py-1.5 text-xs font-medium {{ request('category') == $cat->id ? 'bg-indigo-600 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200' }} transition-colors">{{ $cat->name }}</a>
+                @endforeach
+            </div>
+        </div>
+    @endif
+
     @if($events->isEmpty())
         <div class="flex flex-col items-center justify-center py-20 text-center">
             <svg class="h-16 w-16 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>

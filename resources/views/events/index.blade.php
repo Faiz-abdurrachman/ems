@@ -35,6 +35,14 @@
                     </a>
                 @endif
             </form>
+            @if(isset($categories) && $categories->isNotEmpty())
+                <div class="flex flex-wrap gap-1.5">
+                    <a href="{{ route('admin.events.index') }}" class="rounded-full px-3 py-1 text-xs font-medium {{ !request('category') ? 'bg-indigo-600 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200' }} transition-colors">Semua</a>
+                    @foreach($categories as $cat)
+                        <a href="{{ route('admin.events.index', ['category' => $cat->id]) }}" class="rounded-full px-3 py-1 text-xs font-medium {{ request('category') == $cat->id ? 'bg-indigo-600 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200' }} transition-colors">{{ $cat->name }}</a>
+                    @endforeach
+                </div>
+            @endif
         </div>
 
         <div class="overflow-x-auto">

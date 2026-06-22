@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Event;
 use App\Http\Requests\StoreEventRequest;
 use App\Http\Requests\UpdateEventRequest;
@@ -12,19 +13,25 @@ class EventController extends Controller
 {
     public function index(): View
     {
-        $events = Event::withCount('registrations')
+        $events = Event::with(['category'])
+            ->withCount('registrations')
             ->when(request('search'), fn($q) => $q->where('title', 'like', '%'.request('search').'%')
                 ->orWhere('location', 'like', '%'.request('search').'%'))
+            ->when(request('category'), fn($q) => $q->where('category_id', request('category')))
             ->latest()
             ->paginate(10)
             ->withQueryString();
 
-        return view('events.index', compact('events'));
+        $categories = Category::orderBy('name')->get();
+
+        return view('events.index', compact('events', 'categories'));
     }
 
     public function create(): View
     {
-        return view('events.create');
+        $categories = Category::orderBy('name')->get();
+
+        return view('events.create', compact('categories'));
     }
 
     public function store(StoreEventRequest $request): RedirectResponse
@@ -44,7 +51,7 @@ class EventController extends Controller
 
     public function show(Event $event): View
     {
-        $event->load(['registrations.participant']);
+        $event->load(['registrations.participant', 'category']);
         $event->loadCount('registrations');
 
         return view('events.show', compact('event'));
@@ -52,7 +59,9 @@ class EventController extends Controller
 
     public function edit(Event $event): View
     {
-        return view('events.edit', compact('event'));
+        $categories = Category::orderBy('name')->get();
+
+        return view('events.edit', compact('event', 'categories'));
     }
 
     public function update(UpdateEventRequest $request, Event $event): RedirectResponse

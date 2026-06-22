@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use App\Models\Event;
 use App\Models\Participant;
 use App\Models\Registration;
@@ -17,6 +18,11 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@ems.test',
             'password' => bcrypt('password'),
         ]);
+
+        $categories = ['Workshop', 'Seminar', 'Lomba', 'Pameran', 'Career Fair', 'Pelatihan', 'Hackathon'];
+        foreach ($categories as $name) {
+            Category::create(['name' => $name]);
+        }
 
 
         $events = [

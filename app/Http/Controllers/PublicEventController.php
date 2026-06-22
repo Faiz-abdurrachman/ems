@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Event;
 use App\Models\Participant;
 use App\Models\Registration;
@@ -17,10 +18,13 @@ class PublicEventController extends Controller
             ->where('event_date', '>', now())
             ->withCount('registrations')
             ->when($request->search, fn($q) => $q->where('title', 'like', '%'.$request->search.'%'))
+            ->when($request->category, fn($q) => $q->where('category_id', $request->category))
             ->orderBy('event_date')
             ->paginate(12);
 
-        return view('public.index', compact('events'));
+        $categories = Category::orderBy('name')->get();
+
+        return view('public.index', compact('events', 'categories'));
     }
 
     public function show(Event $event): View

@@ -15,6 +15,7 @@ class Registration extends Model
 
     protected $casts = [
         'registration_date' => 'datetime',
+        'attended_at' => 'datetime',
     ];
 
     public function event(): BelongsTo
