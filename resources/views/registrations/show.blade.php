@@ -6,7 +6,7 @@
 <div class="max-w-3xl mx-auto">
     <div class="mb-6">
         <a href="{{ route('admin.registrations.index') }}"
-           class="inline-flex items-center gap-1.5 text-sm text-ink/50 font-bold hover:text-ink transition-colors">
+           class="inline-flex items-center gap-1.5 text-sm text-ink/70 font-bold hover:text-ink transition-colors">
             <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
             </svg>
@@ -18,11 +18,11 @@
         <div class="border-b border-black px-6 py-4 flex items-center justify-between">
             <div>
                 <h2 class="text-lg font-extrabold text-ink">Registration Detail</h2>
-                <p class="mt-0.5 text-sm text-ink/50 font-bold">Registration #{{ $registration->id }}</p>
+                <p class="mt-0.5 text-sm text-ink/70 font-bold">Registration #{{ $registration->id }}</p>
             </div>
             <div class="flex items-center gap-3">
                 <a href="{{ route('admin.registrations.edit', $registration) }}"
-                   class="inline-flex items-center gap-1.5 rounded-none border border-black bg-white px-3 py-1.5 text-sm font-bold text-ink hover:bg-sun/10 transition-colors">
+                   class="inline-flex items-center gap-1.5 rounded-none border border-black bg-white px-3 py-1.5 text-sm font-bold text-ink hover:bg-mint/10 transition-colors">
                     <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                     </svg>
@@ -45,8 +45,8 @@
 
         <div class="px-6 py-5">
             <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                <div class="rounded-none border border-black bg-sun/10 p-4">
-                    <h3 class="text-xs font-extrabold uppercase tracking-wider text-ink/50 font-bold mb-3">Event</h3>
+                <div class="rounded-none border border-black bg-mint/10 p-4">
+                    <h3 class="text-xs font-extrabold uppercase tracking-wider text-ink/70 font-bold mb-3">Event</h3>
                     <a href="{{ route('admin.events.show', $registration->event) }}" class="block group">
                         <p class="text-sm font-extrabold text-ink group-hover:text-ink transition-colors">
                             {{ $registration->event->title ?? '—' }}
@@ -54,14 +54,14 @@
                         <p class="mt-1 text-sm text-ink/70">
                             {{ optional($registration->event)->event_date ? \Carbon\Carbon::parse($registration->event->event_date)->format('d M Y') : '—' }}
                         </p>
-                        <p class="mt-0.5 text-sm text-ink/50 font-bold">
+                        <p class="mt-0.5 text-sm text-ink/70 font-bold">
                             {{ $registration->event->location ?? '—' }}
                         </p>
                     </a>
                 </div>
 
-                <div class="rounded-none border border-black bg-sun/10 p-4">
-                    <h3 class="text-xs font-extrabold uppercase tracking-wider text-ink/50 font-bold mb-3">Participant</h3>
+                <div class="rounded-none border border-black bg-mint/10 p-4">
+                    <h3 class="text-xs font-extrabold uppercase tracking-wider text-ink/70 font-bold mb-3">Participant</h3>
                     <a href="{{ route('admin.participants.show', $registration->participant) }}" class="block group">
                         <p class="text-sm font-extrabold text-ink group-hover:text-ink transition-colors">
                             {{ $registration->participant->name ?? '—' }}
@@ -69,15 +69,15 @@
                         <p class="mt-1 text-sm text-ink/70">
                             {{ $registration->participant->email ?? '—' }}
                         </p>
-                        <p class="mt-0.5 text-sm text-ink/50 font-bold">
+                        <p class="mt-0.5 text-sm text-ink/70 font-bold">
                             {{ $registration->participant->phone ?? '—' }}
                         </p>
                     </a>
                 </div>
             </div>
 
-            <div class="mt-6 rounded-none border border-black bg-sun/10 p-4">
-                <h3 class="text-xs font-extrabold uppercase tracking-wider text-ink/50 font-bold mb-1">Registration Date</h3>
+            <div class="mt-6 rounded-none border border-black bg-mint/10 p-4">
+                <h3 class="text-xs font-extrabold uppercase tracking-wider text-ink/70 font-bold mb-1">Registration Date</h3>
                 <p class="text-sm text-ink">{{ $registration->created_at->format('d M Y, H:i') }}</p>
             </div>
         </div>
@@ -94,12 +94,12 @@
             </div>
             <div>
                 <h3 class="text-lg font-extrabold text-ink">Delete Registration</h3>
-                <p class="mt-0.5 text-sm text-ink/50 font-bold">Are you sure you want to delete this registration? This action cannot be undone.</p>
+                <p class="mt-0.5 text-sm text-ink/70 font-bold">Are you sure you want to delete this registration? This action cannot be undone.</p>
             </div>
         </div>
         <div class="mt-6 flex justify-end gap-3">
             <button type="button" onclick="document.getElementById('delete-modal').classList.add('hidden')"
-                    class="rounded-none border border-black bg-white px-4 py-2 text-sm font-bold text-ink hover:bg-sun/10 transition-colors">
+                    class="rounded-none border border-black bg-white px-4 py-2 text-sm font-bold text-ink hover:bg-mint/10 transition-colors">
                 Cancel
             </button>
             <button type="button" id="confirm-delete-btn"

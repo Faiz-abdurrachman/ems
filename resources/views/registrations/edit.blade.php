@@ -6,7 +6,7 @@
 <div class="max-w-2xl mx-auto">
     <div class="mb-6">
         <a href="{{ route('admin.registrations.index') }}"
-           class="inline-flex items-center gap-1.5 text-sm text-ink/50 font-bold hover:text-ink transition-colors">
+           class="inline-flex items-center gap-1.5 text-sm text-ink/70 font-bold hover:text-ink transition-colors">
             <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
             </svg>
@@ -17,7 +17,7 @@
     <div class="border-2 border-black bg-white shadow-[6px_6px_0px_0px_#000]">
         <div class="border-b border-black px-6 py-4">
             <h2 class="text-lg font-extrabold text-ink">Edit Registration</h2>
-            <p class="mt-0.5 text-sm text-ink/50 font-bold">Update the event and participant for this registration.</p>
+            <p class="mt-0.5 text-sm text-ink/70 font-bold">Update the event and participant for this registration.</p>
         </div>
 
         <form action="{{ route('admin.registrations.update', $registration) }}" method="POST" class="px-6 py-5 space-y-5">
@@ -58,7 +58,7 @@
 
             <div class="flex items-center justify-end gap-3 pt-2">
                 <a href="{{ route('admin.registrations.index') }}"
-                   class="rounded-none border border-black bg-white px-4 py-2 text-sm font-bold text-ink hover:bg-sun/10 transition-colors">
+                   class="rounded-none border border-black bg-white px-4 py-2 text-sm font-bold text-ink hover:bg-mint/10 transition-colors">
                     Cancel
                 </a>
                 <button type="submit"

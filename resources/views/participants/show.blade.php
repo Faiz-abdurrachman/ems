@@ -6,7 +6,7 @@
 <div class="max-w-4xl mx-auto">
     <div class="mb-6">
         <a href="{{ route('admin.participants.index') }}"
-           class="inline-flex items-center gap-1.5 text-sm text-ink/50 font-bold hover:text-ink transition-colors">
+           class="inline-flex items-center gap-1.5 text-sm text-ink/70 font-bold hover:text-ink transition-colors">
             <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
             </svg>
@@ -18,11 +18,11 @@
         <div class="border-b border-black px-6 py-4 flex items-center justify-between">
             <div>
                 <h2 class="text-lg font-extrabold text-ink">{{ $participant->name }}</h2>
-                <p class="mt-0.5 text-sm text-ink/50 font-bold">Participant Details</p>
+                <p class="mt-0.5 text-sm text-ink/70 font-bold">Participant Details</p>
             </div>
             <div class="flex items-center gap-3">
                 <a href="{{ route('admin.participants.edit', $participant) }}"
-                   class="inline-flex items-center gap-1.5 rounded-none border border-black bg-white px-3 py-1.5 text-sm font-bold text-ink hover:bg-sun/10 transition-colors">
+                   class="inline-flex items-center gap-1.5 rounded-none border border-black bg-white px-3 py-1.5 text-sm font-bold text-ink hover:bg-lavender/10 transition-colors">
                     <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                     </svg>
@@ -46,27 +46,27 @@
         <div class="px-6 py-5">
             <dl class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                    <dt class="text-xs font-bold uppercase tracking-wider text-ink/40">Name</dt>
+                    <dt class="text-xs font-bold uppercase tracking-wider text-ink/60">Name</dt>
                     <dd class="mt-1 text-sm font-bold text-ink">{{ $participant->name }}</dd>
                 </div>
                 <div>
-                    <dt class="text-xs font-bold uppercase tracking-wider text-ink/40">Email</dt>
+                    <dt class="text-xs font-bold uppercase tracking-wider text-ink/60">Email</dt>
                     <dd class="mt-1 text-sm text-ink">{{ $participant->email }}</dd>
                 </div>
                 <div>
-                    <dt class="text-xs font-bold uppercase tracking-wider text-ink/40">NIM</dt>
+                    <dt class="text-xs font-bold uppercase tracking-wider text-ink/60">NIM</dt>
                     <dd class="mt-1 text-sm font-mono text-ink">{{ $participant->nim ?: '—' }}</dd>
                 </div>
                 <div>
-                    <dt class="text-xs font-bold uppercase tracking-wider text-ink/40">Jurusan</dt>
+                    <dt class="text-xs font-bold uppercase tracking-wider text-ink/60">Jurusan</dt>
                     <dd class="mt-1 text-sm text-ink">{{ $participant->jurusan ?: '—' }}</dd>
                 </div>
                 <div>
-                    <dt class="text-xs font-bold uppercase tracking-wider text-ink/40">Phone</dt>
+                    <dt class="text-xs font-bold uppercase tracking-wider text-ink/60">Phone</dt>
                     <dd class="mt-1 text-sm text-ink">{{ $participant->phone ?: '—' }}</dd>
                 </div>
                 <div>
-                    <dt class="text-xs font-bold uppercase tracking-wider text-ink/40">Registered Since</dt>
+                    <dt class="text-xs font-bold uppercase tracking-wider text-ink/60">Registered Since</dt>
                     <dd class="mt-1 text-sm text-ink">{{ $participant->created_at->format('d M Y, H:i') }}</dd>
                 </div>
             </dl>
@@ -87,23 +87,23 @@
                 <svg class="h-12 w-12 text-ink/20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
-                <p class="mt-3 text-sm text-ink/40">No registered events yet</p>
+                <p class="mt-3 text-sm text-ink/60">No registered events yet</p>
             </div>
         @else
             <div class="overflow-hidden">
                 <table class="min-w-full divide-y-2 divide-black">
                     <thead class="bg-ink text-white">
                         <tr>
-                            <th scope="col" class="px-6 py-3.5 text-left text-xs font-extrabold uppercase tracking-wider text-ink/50 font-bold">Event</th>
-                            <th scope="col" class="px-6 py-3.5 text-left text-xs font-extrabold uppercase tracking-wider text-ink/50 font-bold">Date</th>
-                            <th scope="col" class="px-6 py-3.5 text-left text-xs font-extrabold uppercase tracking-wider text-ink/50 font-bold">Location</th>
-                            <th scope="col" class="px-6 py-3.5 text-left text-xs font-extrabold uppercase tracking-wider text-ink/50 font-bold">Status</th>
-                            <th scope="col" class="px-6 py-3.5 text-left text-xs font-extrabold uppercase tracking-wider text-ink/50 font-bold">Registered</th>
+                            <th scope="col" class="px-6 py-3.5 text-left text-xs font-extrabold uppercase tracking-wider text-ink/70 font-bold">Event</th>
+                            <th scope="col" class="px-6 py-3.5 text-left text-xs font-extrabold uppercase tracking-wider text-ink/70 font-bold">Date</th>
+                            <th scope="col" class="px-6 py-3.5 text-left text-xs font-extrabold uppercase tracking-wider text-ink/70 font-bold">Location</th>
+                            <th scope="col" class="px-6 py-3.5 text-left text-xs font-extrabold uppercase tracking-wider text-ink/70 font-bold">Status</th>
+                            <th scope="col" class="px-6 py-3.5 text-left text-xs font-extrabold uppercase tracking-wider text-ink/70 font-bold">Registered</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y-2 divide-black">
                         @foreach($registeredEvents as $registration)
-                            <tr class="hover:bg-sun/10 transition-colors">
+                            <tr class="hover:bg-lavender/10 transition-colors">
                                 <td class="whitespace-nowrap px-6 py-4 text-sm font-bold text-ink">
                                     {{ $registration->event->title ?? '—' }}
                                 </td>
@@ -151,12 +151,12 @@
             </div>
             <div>
                 <h3 class="text-lg font-extrabold text-ink">Delete Participant</h3>
-                <p class="mt-0.5 text-sm text-ink/50 font-bold">Are you sure you want to delete this participant? This action cannot be undone.</p>
+                <p class="mt-0.5 text-sm text-ink/70 font-bold">Are you sure you want to delete this participant? This action cannot be undone.</p>
             </div>
         </div>
         <div class="mt-6 flex justify-end gap-3">
             <button type="button" onclick="document.getElementById('delete-modal').classList.add('hidden')"
-                    class="rounded-none border border-black bg-white px-4 py-2 text-sm font-bold text-ink hover:bg-sun/10 transition-colors">
+                    class="rounded-none border border-black bg-white px-4 py-2 text-sm font-bold text-ink hover:bg-lavender/10 transition-colors">
                 Cancel
             </button>
             <button type="button" id="confirm-delete-btn"

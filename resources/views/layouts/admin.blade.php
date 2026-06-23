@@ -23,7 +23,7 @@
                         <h1 class="text-xl font-extrabold text-ink uppercase tracking-tighter highlight inline-block px-2">@yield('title', 'Dashboard')</h1>
                     </div>
                     <div class="flex items-center gap-4">
-                        <span class="text-xs font-extrabold text-ink/40 uppercase tracking-widest border-2 border-ink/20 px-3 py-1">Campus Event Management</span>
+                        <span class="text-xs font-extrabold text-ink/60 uppercase tracking-widest border-2 border-ink/20 px-3 py-1">Campus Event Management</span>
                     </div>
                 </div>
             </header>

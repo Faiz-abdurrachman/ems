@@ -13,6 +13,8 @@
     --color-warm: #FFFDF7;
     --color-lavender: #C084FC;
     --color-cyan: #22D3EE;
+    --color-flame: #FF6B35;
+    --color-electric: #2563EB;
 }
 
 /* Neo-Brutalism V2 — Sticker-style rotation */
@@ -26,7 +28,10 @@
 
 /* Highlight underline effect */
 .highlight {
-    background: linear-gradient(transparent 60%, var(--color-sun) 60%);
+    text-decoration: underline;
+    text-decoration-color: var(--color-electric);
+    text-decoration-thickness: 4px;
+    text-underline-offset: 4px;
 }
 
 /* Dot-grid background pattern */
@@ -62,7 +67,7 @@
     top: -12px;
     right: -12px;
     font-size: 24px;
-    color: var(--color-sun);
+    color: var(--color-electric);
 }
 
 /* Strikethrough accent lines */
