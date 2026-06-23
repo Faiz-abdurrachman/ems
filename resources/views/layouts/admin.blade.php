@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full bg-warm">
+<html lang="en" class="h-full bg-dots">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,32 +20,32 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                             </svg>
                         </button>
-                        <h1 class="text-xl font-extrabold text-ink uppercase tracking-tighter">@yield('title', 'Dashboard')</h1>
+                        <h1 class="text-xl font-extrabold text-ink uppercase tracking-tighter highlight inline-block px-2">@yield('title', 'Dashboard')</h1>
                     </div>
                     <div class="flex items-center gap-4">
-                        <span class="text-sm font-bold text-ink/50 uppercase tracking-wider">Campus Event Management</span>
+                        <span class="text-xs font-extrabold text-ink/40 uppercase tracking-widest border-2 border-ink/20 px-3 py-1">Campus Event Management</span>
                     </div>
                 </div>
             </header>
 
             <main class="flex-1 overflow-y-auto p-6">
                 @if (session('success'))
-                    <div id="flash-message" class="mb-6 border-2 border-black bg-mint/20 p-4 shadow-[4px_4px_0px_0px_#000] flex items-center justify-between">
+                    <div id="flash-message" class="mb-6 border-2 border-black bg-mint/30 p-4 shadow-[5px_5px_0px_0px_#000] flex items-center justify-between">
                         <div class="flex items-center gap-2">
-                            <svg class="h-5 w-5 text-ink" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                            <p class="text-sm font-bold text-ink">{{ session('success') }}</p>
+                            <svg class="h-5 w-5 text-ink shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                            <p class="text-sm font-extrabold text-ink">{{ session('success') }}</p>
                         </div>
-                        <button type="button" onclick="this.parentElement.remove()" class="font-bold text-ink hover:opacity-60 shrink-0" aria-label="Tutup notifikasi">X</button>
+                        <button type="button" onclick="this.parentElement.remove()" class="font-extrabold text-ink hover:opacity-60 shrink-0" aria-label="Tutup notifikasi">X</button>
                     </div>
                 @endif
 
                 @if ($errors->any())
-                    <div class="mb-6 border-2 border-black bg-red-100 p-4 shadow-[4px_4px_0px_0px_#000]">
-                        <div class="flex items-start gap-2">
-                            <span class="text-lg shrink-0 mt-0.5">⚠️</span>
+                    <div class="mb-6 border-2 border-black bg-coral/30 p-4 shadow-[5px_5px_0px_0px_#000]">
+                        <div class="flex items-start gap-3">
+                            <svg class="h-5 w-5 text-ink shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z"/></svg>
                             <div>
-                                <p class="text-sm font-extrabold text-ink">Silakan perbaiki kesalahan berikut:</p>
-                                <ul class="mt-1 list-disc list-inside text-sm font-semibold text-ink">
+                                <p class="text-sm font-extrabold text-ink uppercase tracking-wider">Perbaiki kesalahan:</p>
+                                <ul class="mt-1 list-disc list-inside text-sm font-bold text-ink">
                                     @foreach ($errors->all() as $error)
                                         <li>{{ $error }}</li>
                                     @endforeach

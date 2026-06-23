@@ -10,7 +10,7 @@
             <p class="mt-1 text-sm text-ink/50 font-bold">Kelola semua event dan pantau pendaftaran</p>
         </div>
         <a href="{{ route('admin.events.create') }}"
-            class="inline-flex items-center gap-1.5 rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-extrabold text-white shadow-sm hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors">
+            class="inline-flex items-center gap-1.5 rounded-none bg-indigo-600 px-4 py-2.5 text-sm font-extrabold text-white shadow-[4px_4px_0px_0px_#000] hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors">
             <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
             </svg>
@@ -18,7 +18,7 @@
         </a>
     </div>
 
-    <div class="overflow-hidden border-2 border-black bg-white shadow-[5px_5px_0px_0px_#000]">
+    <div class="overflow-hidden border-2 border-black bg-white shadow-[6px_6px_0px_0px_#000]">
         <div class="flex flex-col gap-3 border-b border-black px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
             <form method="GET" action="{{ route('admin.events.index') }}" class="relative w-full sm:max-w-xs">
                 <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
@@ -27,7 +27,7 @@
                     </svg>
                 </div>
                 <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari event..."
-                    class="block w-full rounded-lg border-black pl-10 pr-10 text-sm shadow-sm focus:border-black focus:ring-0"
+                    class="block w-full rounded-none border-2 border-black px-4 pl-10 pr-10 py-2 text-sm font-bold bg-sun/10 focus:bg-sun/30 focus:outline-none transition-all"
                     autocomplete="off">
                 @if(request('search'))
                     <a href="{{ route('admin.events.index') }}" class="absolute inset-y-0 right-0 flex items-center pr-3 text-ink/40 hover:text-ink/70" aria-label="Hapus pencarian">
@@ -37,9 +37,9 @@
             </form>
             @if(isset($categories) && $categories->isNotEmpty())
                 <div class="flex flex-wrap gap-1.5">
-                    <a href="{{ route('admin.events.index') }}" class="rounded-full px-3 py-1 text-xs font-bold {{ !request('category') ? 'bg-sun text-ink' : 'bg-gray-100 text-ink/70 hover:bg-gray-200' }} transition-colors">Semua</a>
+                    <a href="{{ route('admin.events.index') }}" class="rounded-none px-3 py-1 text-xs font-bold {{ !request('category') ? 'bg-sun text-ink' : 'bg-gray-100 text-ink/70 hover:bg-gray-200' }} transition-colors">Semua</a>
                     @foreach($categories as $cat)
-                        <a href="{{ route('admin.events.index', ['category' => $cat->id]) }}" class="rounded-full px-3 py-1 text-xs font-bold {{ request('category') == $cat->id ? 'bg-sun text-ink' : 'bg-gray-100 text-ink/70 hover:bg-gray-200' }} transition-colors">{{ $cat->name }}</a>
+                        <a href="{{ route('admin.events.index', ['category' => $cat->id]) }}" class="rounded-none px-3 py-1 text-xs font-bold {{ request('category') == $cat->id ? 'bg-sun text-ink' : 'bg-gray-100 text-ink/70 hover:bg-gray-200' }} transition-colors">{{ $cat->name }}</a>
                     @endforeach
                 </div>
             @endif
@@ -49,7 +49,7 @@
             @if (isset($events) && count($events) > 0)
                 <table class="w-full">
                     <thead>
-                        <tr class="border-b border-black bg-sun/20 sticky top-0 z-10">
+                        <tr class="border-b border-black bg-sun/10 sticky top-0 z-10">
                             <th class="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-ink/50 font-bold">#</th>
                             <th class="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-ink/50 font-bold">Title</th>
                             <th class="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-ink/50 font-bold">Date</th>
@@ -62,7 +62,7 @@
                     </thead>
                     <tbody class="divide-y-2 divide-black">
                         @foreach ($events as $event)
-                            <tr class="hover:bg-sun/20 transition-colors">
+                            <tr class="hover:bg-sun/10 transition-colors">
                                 <td class="whitespace-nowrap px-6 py-4 text-sm text-ink/50 font-bold">{{ $loop->iteration + (($events->currentPage() ?? 1) - 1) * ($events->perPage() ?? 10) }}</td>
                                 <td class="whitespace-nowrap px-6 py-4">
                                     <a href="{{ route('admin.events.show', $event) }}" class="text-sm font-bold text-ink hover:text-ink">
@@ -77,10 +77,10 @@
                                 <td class="whitespace-nowrap px-6 py-4">
                                     @php
                                         $statusColors = [
-                                            'upcoming' => 'bg-blue-50 text-blue-700 ring-blue-600/20',
-                                            'ongoing' => 'bg-mint/20 text-emerald-700 ring-emerald-600/20',
-                                            'completed' => 'bg-gray-100 text-ink ring-gray-500/20',
-                                            'cancelled' => 'bg-coral/20 text-ink ring-red-600/20',
+                                            'upcoming' => 'bg-sun',
+                                            'ongoing' => 'bg-mint',
+                                            'completed' => 'bg-gray-300',
+                                            'cancelled' => 'bg-coral',
                                         ];
                                         $statusLabels = [
                                             'upcoming' => 'Akan Datang',
@@ -91,7 +91,7 @@
                                         $color = $statusColors[$event->status] ?? $statusColors['upcoming'];
                                         $label = $statusLabels[$event->status] ?? $event->status;
                                     @endphp
-                                    <span class="inline-flex items-center rounded-md px-2 py-0.5 text-xs font-bold ring-1 ring-inset {{ $color }}">
+                                    <span class="sticker inline-flex items-center border-2 border-black px-2.5 py-0.5 text-xs font-extrabold text-ink {{ $color }}">
                                         {{ $label }}
                                     </span>
                                 </td>
@@ -103,7 +103,7 @@
                                 <td class="whitespace-nowrap px-6 py-4 text-right">
                                     <div class="flex items-center justify-end gap-1">
                                         <a href="{{ route('admin.events.show', $event) }}"
-                                            class="inline-flex items-center justify-center rounded-md p-1.5 text-ink/40 hover:bg-sun/20 hover:text-ink/70 transition-colors"
+                                            class="inline-flex items-center justify-center rounded-md p-1.5 text-ink/40 hover:bg-sun/10 hover:text-ink/70 transition-colors"
                                             aria-label="Lihat event">
                                             <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -111,7 +111,7 @@
                                             </svg>
                                         </a>
                                         <a href="{{ route('admin.events.edit', $event) }}"
-                                            class="inline-flex items-center justify-center rounded-md p-1.5 text-ink/40 hover:bg-sun/20 hover:text-ink/70 transition-colors"
+                                            class="inline-flex items-center justify-center rounded-md p-1.5 text-ink/40 hover:bg-sun/10 hover:text-ink/70 transition-colors"
                                             aria-label="Edit event">
                                             <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
@@ -146,7 +146,7 @@
                     </p>
                     @if (!request('search'))
                         <a href="{{ route('admin.events.create') }}"
-                            class="mt-4 inline-flex items-center gap-1.5 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-extrabold text-white shadow-sm hover:bg-black hover:text-white transition-colors">
+                            class="mt-4 inline-flex items-center gap-1.5 rounded-none bg-indigo-600 px-4 py-2 text-sm font-extrabold text-white shadow-[4px_4px_0px_0px_#000] hover:bg-black hover:text-white transition-colors">
                             <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                             </svg>
@@ -166,9 +166,9 @@
 </div>
 
 <div id="delete-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 p-4">
-    <div class="w-full max-w-sm rounded-xl bg-white p-6 shadow-2xl">
+    <div class="w-full max-w-sm rounded-none bg-white p-6 shadow-2xl">
         <div class="flex items-center gap-3">
-            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-100">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-none bg-red-100">
                 <svg class="h-5 w-5 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z" />
                 </svg>
@@ -180,11 +180,11 @@
         </div>
         <div class="mt-6 flex justify-end gap-3">
             <button type="button" onclick="document.getElementById('delete-modal').classList.add('hidden')"
-                class="rounded-lg border border-black bg-white px-4 py-2 text-sm font-bold text-ink hover:bg-sun/20 transition-colors">
+                class="rounded-none border border-black bg-white px-4 py-2 text-sm font-bold text-ink hover:bg-sun/10 transition-colors">
                 Batal
             </button>
             <button type="button" id="confirm-delete-btn"
-                class="rounded-lg bg-red-600 px-4 py-2 text-sm font-bold text-white hover:bg-red-700 transition-colors">
+                class="rounded-none bg-red-600 px-4 py-2 text-sm font-bold text-white hover:bg-red-700 transition-colors">
                 Hapus
             </button>
         </div>

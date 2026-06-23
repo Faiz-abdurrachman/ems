@@ -10,7 +10,7 @@
                 <svg class="h-5 w-5 text-ink/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
             </div>
             <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari event..."
-                class="block w-full rounded-lg border-black pl-10 pr-4 py-2.5 text-sm shadow-sm focus:border-black focus:ring-0">
+                class="block w-full rounded-none border-black pl-10 pr-4 py-2.5 text-sm shadow-[4px_4px_0px_0px_#000] focus:bg-sun/20 focus:outline-none">
             @if(request('search'))
                 <a href="{{ route('home') }}" class="absolute inset-y-0 right-0 flex items-center pr-3 text-ink/40 hover:text-ink/70" aria-label="Hapus pencarian">
                     <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -22,9 +22,9 @@
     @if(isset($categories) && $categories->isNotEmpty())
         <div class="mx-auto max-w-7xl px-6 -mt-4 mb-6">
             <div class="flex flex-wrap justify-center gap-2">
-                <a href="{{ route('home') }}" class="rounded-full px-4 py-1.5 text-xs font-bold {{ !request('category') ? 'bg-sun text-ink' : 'bg-gray-100 text-ink/70 hover:bg-gray-200' }} transition-colors">Semua</a>
+                <a href="{{ route('home') }}" class="rounded-none px-4 py-1.5 text-xs font-bold {{ !request('category') ? 'bg-sun text-ink' : 'bg-gray-100 text-ink/70 hover:bg-gray-200' }} transition-colors">Semua</a>
                 @foreach($categories as $cat)
-                    <a href="{{ route('home', ['category' => $cat->id]) }}" class="rounded-full px-4 py-1.5 text-xs font-bold {{ request('category') == $cat->id ? 'bg-sun text-ink' : 'bg-gray-100 text-ink/70 hover:bg-gray-200' }} transition-colors">{{ $cat->name }}</a>
+                    <a href="{{ route('home', ['category' => $cat->id]) }}" class="rounded-none px-4 py-1.5 text-xs font-bold {{ request('category') == $cat->id ? 'bg-sun text-ink' : 'bg-gray-100 text-ink/70 hover:bg-gray-200' }} transition-colors">{{ $cat->name }}</a>
                 @endforeach
             </div>
         </div>
@@ -39,7 +39,7 @@
     @else
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             @foreach($events as $event)
-                <a href="{{ route('events.show', $event) }}" class="group block border-2 border-black bg-white shadow-[5px_5px_0px_0px_#000] hover:shadow-md transition-shadow overflow-hidden">
+                <a href="{{ route('events.show', $event) }}" class="group block border-2 border-black bg-white shadow-[6px_6px_0px_0px_#000] hover:shadow-md transition-shadow overflow-hidden">
                     @if($event->image)
                         <img src="{{ asset('storage/'.$event->image) }}" alt="{{ $event->title }}" class="h-48 w-full object-cover">
                     @else
@@ -60,13 +60,13 @@
                             </span>
                         </div>
                         <div class="mt-3 flex items-center gap-2">
-                            <div class="h-1.5 flex-1 overflow-hidden rounded-full bg-gray-100">
-                                <div class="h-full rounded-full {{ ($event->registrations_count >= $event->quota) ? 'bg-coral/200' : 'bg-sun' }} transition-all" style="width: {{ $event->quota > 0 ? min($event->registrations_count / $event->quota * 100, 100) : 0 }}%"></div>
+                            <div class="h-1.5 flex-1 overflow-hidden rounded-none bg-gray-100">
+                                <div class="h-full rounded-none {{ ($event->registrations_count >= $event->quota) ? 'bg-coral/200' : 'bg-sun' }} transition-all" style="width: {{ $event->quota > 0 ? min($event->registrations_count / $event->quota * 100, 100) : 0 }}%"></div>
                             </div>
                             <span class="text-xs font-bold {{ ($event->registrations_count >= $event->quota) ? 'text-red-600' : 'text-ink/50 font-bold' }}">{{ $event->registrations_count }}/{{ $event->quota }}</span>
                         </div>
                         @if($event->registrations_count >= $event->quota)
-                            <span class="mt-2 inline-flex items-center rounded-full bg-coral/20 px-2.5 py-0.5 text-xs font-bold text-ink">Kuota Penuh</span>
+                            <span class="mt-2 inline-flex items-center rounded-none bg-coral/20 px-2.5 py-0.5 text-xs font-bold text-ink">Kuota Penuh</span>
                         @endif
                     </div>
                 </a>

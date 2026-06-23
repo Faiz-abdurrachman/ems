@@ -14,7 +14,7 @@
         </a>
     </div>
 
-    <div class="border-2 border-black bg-white shadow-[5px_5px_0px_0px_#000]">
+    <div class="border-2 border-black bg-white shadow-[6px_6px_0px_0px_#000]">
         <div class="border-b border-black px-6 py-4 flex items-center justify-between">
             <div>
                 <h2 class="text-lg font-extrabold text-ink">Registration Detail</h2>
@@ -22,7 +22,7 @@
             </div>
             <div class="flex items-center gap-3">
                 <a href="{{ route('admin.registrations.edit', $registration) }}"
-                   class="inline-flex items-center gap-1.5 rounded-lg border border-black bg-white px-3 py-1.5 text-sm font-bold text-ink hover:bg-sun/20 transition-colors">
+                   class="inline-flex items-center gap-1.5 rounded-none border border-black bg-white px-3 py-1.5 text-sm font-bold text-ink hover:bg-sun/10 transition-colors">
                     <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                     </svg>
@@ -33,7 +33,7 @@
                     @method('DELETE')
                     <button type="button"
                             onclick="confirmDelete(this)"
-                            class="inline-flex items-center gap-1.5 rounded-lg border border-red-300 bg-white px-3 py-1.5 text-sm font-bold text-red-600 hover:bg-coral/20 transition-colors">
+                            class="inline-flex items-center gap-1.5 rounded-none border border-red-300 bg-white px-3 py-1.5 text-sm font-bold text-red-600 hover:bg-coral/20 transition-colors">
                         <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                         </svg>
@@ -45,7 +45,7 @@
 
         <div class="px-6 py-5">
             <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                <div class="rounded-lg border border-black bg-sun/20 p-4">
+                <div class="rounded-none border border-black bg-sun/10 p-4">
                     <h3 class="text-xs font-extrabold uppercase tracking-wider text-ink/50 font-bold mb-3">Event</h3>
                     <a href="{{ route('admin.events.show', $registration->event) }}" class="block group">
                         <p class="text-sm font-extrabold text-ink group-hover:text-ink transition-colors">
@@ -60,7 +60,7 @@
                     </a>
                 </div>
 
-                <div class="rounded-lg border border-black bg-sun/20 p-4">
+                <div class="rounded-none border border-black bg-sun/10 p-4">
                     <h3 class="text-xs font-extrabold uppercase tracking-wider text-ink/50 font-bold mb-3">Participant</h3>
                     <a href="{{ route('admin.participants.show', $registration->participant) }}" class="block group">
                         <p class="text-sm font-extrabold text-ink group-hover:text-ink transition-colors">
@@ -76,7 +76,7 @@
                 </div>
             </div>
 
-            <div class="mt-6 rounded-lg border border-black bg-sun/20 p-4">
+            <div class="mt-6 rounded-none border border-black bg-sun/10 p-4">
                 <h3 class="text-xs font-extrabold uppercase tracking-wider text-ink/50 font-bold mb-1">Registration Date</h3>
                 <p class="text-sm text-ink">{{ $registration->created_at->format('d M Y, H:i') }}</p>
             </div>
@@ -85,9 +85,9 @@
 </div>
 
 <div id="delete-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 p-4">
-    <div class="w-full max-w-sm rounded-xl bg-white p-6 shadow-2xl">
+    <div class="w-full max-w-sm rounded-none bg-white p-6 shadow-2xl">
         <div class="flex items-center gap-3">
-            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-100">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-none bg-red-100">
                 <svg class="h-5 w-5 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z" />
                 </svg>
@@ -99,11 +99,11 @@
         </div>
         <div class="mt-6 flex justify-end gap-3">
             <button type="button" onclick="document.getElementById('delete-modal').classList.add('hidden')"
-                    class="rounded-lg border border-black bg-white px-4 py-2 text-sm font-bold text-ink hover:bg-sun/20 transition-colors">
+                    class="rounded-none border border-black bg-white px-4 py-2 text-sm font-bold text-ink hover:bg-sun/10 transition-colors">
                 Cancel
             </button>
             <button type="button" id="confirm-delete-btn"
-                    class="rounded-lg bg-red-600 px-4 py-2 text-sm font-bold text-white hover:bg-red-700 transition-colors">
+                    class="rounded-none bg-red-600 px-4 py-2 text-sm font-bold text-white hover:bg-red-700 transition-colors">
                 Delete
             </button>
         </div>

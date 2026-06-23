@@ -14,21 +14,21 @@
 
         <div class="flex items-center gap-2 flex-wrap">
             <a href="{{ route('admin.events.check-in', $event) }}"
-                class="inline-flex items-center gap-1.5 rounded-lg border border-emerald-300 bg-white px-3.5 py-2 text-sm font-bold text-emerald-700 shadow-sm hover:bg-mint/20 transition-colors">
+                class="inline-flex items-center gap-1.5 rounded-none border border-emerald-300 bg-white px-3.5 py-2 text-sm font-bold text-emerald-700 shadow-[4px_4px_0px_0px_#000] hover:bg-mint/20 transition-colors">
                 <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
                 Presensi
             </a>
             <a href="{{ route('admin.events.export', $event) }}"
-                class="inline-flex items-center gap-1.5 rounded-lg border border-indigo-300 bg-white px-3.5 py-2 text-sm font-bold text-ink shadow-sm hover:bg-indigo-50 transition-colors">
+                class="inline-flex items-center gap-1.5 rounded-none border border-indigo-300 bg-white px-3.5 py-2 text-sm font-bold text-ink shadow-[4px_4px_0px_0px_#000] hover:bg-indigo-50 transition-colors">
                 <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                 </svg>
                 Export CSV
             </a>
             <a href="{{ route('admin.events.edit', $event) }}"
-                class="inline-flex items-center gap-1.5 rounded-lg border border-black bg-white px-3.5 py-2 text-sm font-bold text-ink shadow-sm hover:bg-sun/20 transition-colors">
+                class="inline-flex items-center gap-1.5 rounded-none border border-black bg-white px-3.5 py-2 text-sm font-bold text-ink shadow-[4px_4px_0px_0px_#000] hover:bg-sun/10 transition-colors">
                 <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                 </svg>
@@ -38,7 +38,7 @@
                 @csrf
                 @method('DELETE')
                 <button type="button" onclick="confirmDelete(this)"
-                    class="inline-flex items-center gap-1.5 rounded-lg border border-red-300 bg-white px-3.5 py-2 text-sm font-bold text-red-600 shadow-sm hover:bg-coral/20 transition-colors">
+                    class="inline-flex items-center gap-1.5 rounded-none border border-red-300 bg-white px-3.5 py-2 text-sm font-bold text-red-600 shadow-[4px_4px_0px_0px_#000] hover:bg-coral/20 transition-colors">
                     <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                     </svg>
@@ -48,7 +48,7 @@
         </div>
     </div>
 
-    <div class="overflow-hidden border-2 border-black bg-white shadow-[5px_5px_0px_0px_#000]">
+    <div class="overflow-hidden border-2 border-black bg-white shadow-[6px_6px_0px_0px_#000]">
         <div class="px-6 py-5 border-b border-black">
             <div class="flex flex-wrap items-start justify-between gap-3">
                 <div>
@@ -56,10 +56,10 @@
                     <div class="mt-1 flex items-center gap-2">
                         @php
                             $statusColors = [
-                                'upcoming' => 'bg-blue-50 text-blue-700 ring-blue-600/20',
-                                'ongoing' => 'bg-mint/20 text-emerald-700 ring-emerald-600/20',
-                                'completed' => 'bg-gray-100 text-ink ring-gray-500/20',
-                                'cancelled' => 'bg-coral/20 text-ink ring-red-600/20',
+                                'upcoming' => 'bg-sun',
+                                'ongoing' => 'bg-mint',
+                                'completed' => 'bg-gray-300',
+                                'cancelled' => 'bg-coral',
                             ];
                             $statusLabels = [
                                 'upcoming' => 'Akan Datang',
@@ -70,7 +70,7 @@
                             $color = $statusColors[$event->status] ?? $statusColors['upcoming'];
                             $label = $statusLabels[$event->status] ?? $event->status;
                         @endphp
-                        <span class="inline-flex items-center rounded-md px-2 py-0.5 text-xs font-bold ring-1 ring-inset {{ $color }}">
+                        <span class="sticker inline-flex items-center border-2 border-black px-2.5 py-0.5 text-xs font-extrabold text-ink {{ $color }}">
                             {{ $label }}
                         </span>
                         @if($event->category)
@@ -115,8 +115,8 @@
             <div class="border-t border-black px-6 py-3">
                 <div class="flex items-center gap-3">
                     <span class="text-xs font-bold text-ink/50 font-bold">Progres registrasi</span>
-                    <div class="h-2 flex-1 overflow-hidden rounded-full bg-gray-100">
-                        <div class="h-full rounded-full bg-sun transition-all"
+                    <div class="h-2 flex-1 overflow-hidden rounded-none bg-gray-100">
+                        <div class="h-full rounded-none bg-sun transition-all"
                             style="width: {{ min((($event->registrations_count ?? 0) / $event->quota) * 100, 100) }}%"></div>
                     </div>
                     <span class="text-xs font-extrabold text-ink">{{ round(min((($event->registrations_count ?? 0) / $event->quota) * 100, 100)) }}%</span>
@@ -125,7 +125,7 @@
         @endif
     </div>
 
-    <div class="border-2 border-black bg-white shadow-[5px_5px_0px_0px_#000]">
+    <div class="border-2 border-black bg-white shadow-[6px_6px_0px_0px_#000]">
         <div class="flex items-center justify-between border-b border-black px-6 py-4">
             <h3 class="text-base font-extrabold text-ink">Peserta Terdaftar</h3>
             <span class="text-sm text-ink/50 font-bold">{{ $event->registrations->count() }} registered</span>
@@ -144,7 +144,7 @@
                     </thead>
                     <tbody class="divide-y-2 divide-black">
                         @foreach ($event->registrations as $reg)
-                            <tr class="hover:bg-sun/20 transition-colors">
+                            <tr class="hover:bg-sun/10 transition-colors">
                                 <td class="whitespace-nowrap px-6 py-3 text-sm font-bold text-ink">{{ $reg->participant->name ?? '—' }}</td>
                                 <td class="whitespace-nowrap px-6 py-3 text-sm text-ink/70">{{ $reg->participant->email ?? '—' }}</td>
                                 <td class="whitespace-nowrap px-6 py-3 text-sm text-ink/70">{{ $reg->participant->phone ?? '—' }}</td>
