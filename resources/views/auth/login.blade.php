@@ -27,7 +27,7 @@
                             class="mt-1 block w-full border-2 border-black px-4 py-2.5 text-sm font-bold shadow-[3px_3px_0px_0px_#000] focus:outline-none focus:shadow-[1px_1px_0px_0px_#000] focus:translate-x-[2px] focus:translate-y-[2px] transition-all {{ $errors->has('email') ? 'border-coral bg-red-50' : '' }}"
                             placeholder="admin@ems.test" required autofocus>
                         @error('email')
-                            <p class="mt-1.5 text-sm font-bold text-coral">⚠ {{ $message }}</p>
+                            <p class="mt-1.5 text-sm font-bold text-coral">{{ $message }}</p>
                         @enderror
                     </div>
 
@@ -39,7 +39,7 @@
                             class="block w-full border-2 border-black px-4 py-2.5 text-sm font-bold shadow-[3px_3px_0px_0px_#000] focus:outline-none focus:shadow-[1px_1px_0px_0px_#000] focus:translate-x-[2px] focus:translate-y-[2px] transition-all {{ $errors->has('password') ? 'border-coral bg-red-50' : '' }}"
                             placeholder="••••••••" required>
                         @error('password')
-                            <p class="mt-1.5 text-sm font-bold text-coral">⚠ {{ $message }}</p>
+                            <p class="mt-1.5 text-sm font-bold text-coral">{{ $message }}</p>
                         @enderror
                     </div>
 
@@ -49,7 +49,7 @@
                     </div>
 
                     <button type="submit" class="flex w-full items-center justify-center border-2 border-black bg-sun px-4 py-3 text-sm font-extrabold text-ink uppercase tracking-wider shadow-[4px_4px_0px_0px_#000] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all">
-                        🚀 Masuk
+                        Masuk
                     </button>
                 </form>
             </div>

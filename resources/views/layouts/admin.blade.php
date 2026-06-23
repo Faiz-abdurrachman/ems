@@ -32,10 +32,10 @@
                 @if (session('success'))
                     <div id="flash-message" class="mb-6 border-2 border-black bg-mint/20 p-4 shadow-[4px_4px_0px_0px_#000] flex items-center justify-between">
                         <div class="flex items-center gap-2">
-                            <span class="text-lg">✅</span>
+                            <svg class="h-5 w-5 text-ink" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                             <p class="text-sm font-bold text-ink">{{ session('success') }}</p>
                         </div>
-                        <button type="button" onclick="this.parentElement.remove()" class="font-bold text-ink hover:opacity-60 shrink-0" aria-label="Tutup notifikasi">✕</button>
+                        <button type="button" onclick="this.parentElement.remove()" class="font-bold text-ink hover:opacity-60 shrink-0" aria-label="Tutup notifikasi">X</button>
                     </div>
                 @endif
 

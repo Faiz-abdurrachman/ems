@@ -18,7 +18,7 @@
             <div class="flex items-center gap-4">
                 <a href="{{ route('login') }}"
                    class="inline-flex items-center gap-2 border-2 border-black bg-sun px-5 py-2 text-sm font-extrabold text-ink uppercase tracking-wider shadow-[3px_3px_0px_0px_#000] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] transition-all">
-                    🔑 Admin Login
+                    Admin Login
                 </a>
             </div>
         </div>
@@ -29,10 +29,10 @@
             <div class="mx-auto max-w-7xl px-6 mb-6">
                 <div class="border-2 border-black bg-mint/20 p-4 shadow-[4px_4px_0px_0px_#000] flex items-center justify-between">
                     <div class="flex items-center gap-2">
-                        <span class="text-lg">✅</span>
+                        <svg class="h-5 w-5 text-ink" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                         <p class="text-sm font-bold text-ink">{{ session('success') }}</p>
                     </div>
-                    <button onclick="this.parentElement.remove()" class="font-bold text-ink hover:opacity-60" aria-label="Tutup">✕</button>
+                    <button onclick="this.parentElement.remove()" class="font-bold text-ink hover:opacity-60" aria-label="Tutup">X</button>
                 </div>
             </div>
         @endif
