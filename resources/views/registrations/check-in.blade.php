@@ -26,7 +26,7 @@
             @if($event->registrations->isNotEmpty())
                 <table class="w-full">
                     <thead>
-                        <tr class="border-b border-black bg-gray-50">
+                        <tr class="border-b border-black bg-[#FFD700]">
                             <th class="px-6 py-3 text-left text-xs font-extrabold uppercase tracking-wider text-ink/70 font-bold">#</th>
                             <th class="px-6 py-3 text-left text-xs font-extrabold uppercase tracking-wider text-ink/70 font-bold">Nama</th>
                             <th class="px-6 py-3 text-left text-xs font-extrabold uppercase tracking-wider text-ink/70 font-bold">Email</th>

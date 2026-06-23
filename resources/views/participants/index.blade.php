@@ -53,7 +53,7 @@
     @else
         <div class="overflow-hidden border-2 border-black bg-white shadow-[6px_6px_0px_0px_#000]">
             <table class="min-w-full divide-y-2 divide-black">
-                <thead class="bg-gray-50 sticky top-0 z-10">
+                <thead class="bg-[#FFD700] sticky top-0 z-10">
                     <tr>
                         <th scope="col" class="w-12 px-6 py-3.5 text-left text-xs font-extrabold uppercase tracking-wider text-ink/70 font-bold">#</th>
                         <th scope="col" class="px-6 py-3.5 text-left text-xs font-extrabold uppercase tracking-wider text-ink/70 font-bold">Name</th>

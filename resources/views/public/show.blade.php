@@ -48,7 +48,7 @@
                 <h2 class="text-lg font-extrabold text-ink">Daftar Event Ini</h2>
 
                 @if(now()->gt($event->event_date))
-                    <div class="mt-4 rounded-none bg-gray-50 p-4 text-center text-sm text-ink/70 font-bold">Event telah berakhir</div>
+                    <div class="mt-4 rounded-none bg-[#FFD700] p-4 text-center text-sm text-ink/70 font-bold">Event telah berakhir</div>
                 @elseif($event->registrations_count >= $event->quota)
                     <div class="mt-4 rounded-none bg-coral/20 p-4 text-center text-sm font-bold text-ink">Kuota sudah penuh</div>
                 @else
