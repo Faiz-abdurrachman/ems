@@ -7,7 +7,7 @@
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <div class="relative border-2 border-black bg-white shadow-[6px_6px_0px_0px_#000] hover:scale-[1.02] hover:shadow-[3px_3px_0px_0px_#000] transition-all cursor-default sticker">
             <div class="absolute -top-3 -right-3 text-lg font-black text-cyan">✦</div>
-            <div class="absolute top-0 left-0 w-full h-2 bg-cyan"></div>
+            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-cyan-300 to-cyan-600"></div>
             <div class="p-6 pt-7">
                 <svg class="h-10 w-10 text-ink" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
                 <p class="mt-3 text-xs font-extrabold uppercase tracking-widest text-ink/60">Total Events</p>
@@ -16,7 +16,7 @@
         </div>
 
         <div class="relative border-2 border-black bg-white shadow-[6px_6px_0px_0px_#000] hover:scale-[1.02] hover:shadow-[3px_3px_0px_0px_#000] transition-all cursor-default">
-            <div class="absolute top-0 left-0 w-full h-2 bg-mint"></div>
+            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-purple-300 to-purple-600"></div>
             <div class="p-6 pt-7">
                 <svg class="h-10 w-10 text-ink" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
                 <p class="mt-3 text-xs font-extrabold uppercase tracking-widest text-ink/60">Total Participants</p>
@@ -25,7 +25,7 @@
         </div>
 
         <div class="relative border-2 border-black bg-white shadow-[6px_6px_0px_0px_#000] hover:scale-[1.02] hover:shadow-[3px_3px_0px_0px_#000] transition-all cursor-default">
-            <div class="absolute top-0 left-0 w-full h-2 bg-coral"></div>
+            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-300 to-red-600"></div>
             <div class="p-6 pt-7">
                 <svg class="h-10 w-10 text-ink" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
                 <p class="mt-3 text-xs font-extrabold uppercase tracking-widest text-ink/60">Total Registrations</p>
@@ -34,7 +34,7 @@
         </div>
 
         <div class="relative border-2 border-black bg-white shadow-[6px_6px_0px_0px_#000] hover:scale-[1.02] hover:shadow-[3px_3px_0px_0px_#000] transition-all cursor-default">
-            <div class="absolute top-0 left-0 w-full h-2 bg-lavender"></div>
+            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-orange-300 to-orange-600"></div>
             <div class="p-6 pt-7">
                 <svg class="h-10 w-10 text-ink" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                 <p class="mt-3 text-xs font-extrabold uppercase tracking-widest text-ink/60">Active Events</p>
@@ -92,7 +92,7 @@
                                     <span>{{ $event->registrations_count ?? 0 }} peserta</span>
                                 </div>
                                 <div class="mt-2 h-2 border border-black bg-gray-100">
-                                    <div class="h-full bg-flame" style="width: {{ $event->quota > 0 ? min(($event->registrations_count ?? 0) / $event->quota * 100, 100) : 0 }}%"></div>
+                                    <div class="h-full bg-gradient-to-r from-orange-300 to-orange-600" style="width: {{ $event->quota > 0 ? min(($event->registrations_count ?? 0) / $event->quota * 100, 100) : 0 }}%"></div>
                                 </div>
                             </a>
                         </div>

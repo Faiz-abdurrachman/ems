@@ -76,7 +76,7 @@
                             @error('phone')<p class="mt-1 text-xs text-red-600">{{ $message }}</p>@enderror
                         </div>
                         @error('event')<p class="text-sm text-red-600 font-bold">{{ $message }}</p>@enderror
-                        <button type="submit" class="w-full rounded-none bg-electric px-4 py-2.5 text-sm font-extrabold text-white shadow-[4px_4px_0px_0px_#000] hover:bg-black hover:text-white transition-colors">Daftar Sekarang</button>
+                        <button type="submit" class="w-full rounded-none bg-gradient-to-r from-blue-400 to-blue-700 px-4 py-2.5 text-sm font-extrabold text-white shadow-[4px_4px_0px_0px_#000] hover:bg-black hover:text-white transition-colors">Daftar Sekarang</button>
                     </form>
                 @endif
 

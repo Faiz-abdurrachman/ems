@@ -42,7 +42,7 @@
                                 <td class="whitespace-nowrap px-6 py-3 text-sm text-ink/70">{{ $reg->participant->email ?? '—' }}</td>
                                 <td class="whitespace-nowrap px-6 py-3">
                                     @if($reg->attended_at)
-                                        <span class="sticker inline-flex items-center border-2 border-black bg-mint px-2.5 py-0.5 text-xs font-extrabold text-ink">
+                                        <span class="sticker inline-flex items-center border-2 border-black bg-gradient-to-r from-emerald-300 to-emerald-600 px-2.5 py-0.5 text-xs font-extrabold text-ink">
                                             HADIR
                                         </span>
                                     @else
