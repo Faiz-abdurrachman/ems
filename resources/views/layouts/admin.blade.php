@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full bg-gray-50">
+<html lang="en" class="h-full bg-warm">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,46 +12,40 @@
         <x-sidebar />
 
         <div class="flex-1 flex flex-col min-w-0 overflow-hidden">
-            <header class="sticky top-0 z-10 bg-white border-b border-gray-200">
-                <div class="flex items-center justify-between px-6 py-4">
+            <header class="sticky top-0 z-10 bg-white border-b-2 border-black">
+                <div class="flex items-center justify-between px-6 py-3">
                     <div class="flex items-center gap-3">
-                        <button id="mobile-menu-btn" class="lg:hidden text-gray-500 hover:text-gray-700">
+                        <button id="mobile-menu-btn" class="lg:hidden font-bold text-ink hover:opacity-60">
                             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                             </svg>
                         </button>
-                        <h1 class="text-lg font-semibold text-gray-900">@yield('title', 'Dashboard')</h1>
+                        <h1 class="text-xl font-extrabold text-ink uppercase tracking-tighter">@yield('title', 'Dashboard')</h1>
                     </div>
                     <div class="flex items-center gap-4">
-                        <span class="text-sm text-gray-500">Campus Event Management</span>
+                        <span class="text-sm font-bold text-ink/50 uppercase tracking-wider">Campus Event Management</span>
                     </div>
                 </div>
             </header>
 
             <main class="flex-1 overflow-y-auto p-6">
                 @if (session('success'))
-                    <div id="flash-message" class="mb-6 rounded-lg bg-emerald-50 border border-emerald-200 p-4 flex items-center justify-between">
+                    <div id="flash-message" class="mb-6 border-2 border-black bg-mint/20 p-4 shadow-[4px_4px_0px_0px_#000] flex items-center justify-between">
                         <div class="flex items-center gap-2">
-                            <svg class="h-5 w-5 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <p class="text-sm font-medium text-emerald-800">{{ session('success') }}</p>
+                            <span class="text-lg">✅</span>
+                            <p class="text-sm font-bold text-ink">{{ session('success') }}</p>
                         </div>
-                        <button type="button" onclick="this.parentElement.remove()" class="text-emerald-400 hover:text-emerald-600 shrink-0" aria-label="Tutup notifikasi">
-                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-                        </button>
+                        <button type="button" onclick="this.parentElement.remove()" class="font-bold text-ink hover:opacity-60 shrink-0" aria-label="Tutup notifikasi">✕</button>
                     </div>
                 @endif
 
                 @if ($errors->any())
-                    <div class="mb-6 rounded-lg bg-red-50 border border-red-200 p-4">
+                    <div class="mb-6 border-2 border-black bg-red-100 p-4 shadow-[4px_4px_0px_0px_#000]">
                         <div class="flex items-start gap-2">
-                            <svg class="h-5 w-5 text-red-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
+                            <span class="text-lg shrink-0 mt-0.5">⚠️</span>
                             <div>
-                                <p class="text-sm font-medium text-red-800">Silakan perbaiki kesalahan berikut:</p>
-                                <ul class="mt-1 list-disc list-inside text-sm text-red-700">
+                                <p class="text-sm font-extrabold text-ink">Silakan perbaiki kesalahan berikut:</p>
+                                <ul class="mt-1 list-disc list-inside text-sm font-semibold text-ink">
                                     @foreach ($errors->all() as $error)
                                         <li>{{ $error }}</li>
                                     @endforeach
