@@ -1,0 +1,227 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e6]: E
+      - generic [ref=e7]: EMS
+    - navigation [ref=e8]:
+      - link "Dashboard" [ref=e9] [cursor=pointer]:
+        - /url: https://ems-production-8c0e.up.railway.app/admin
+        - img [ref=e10]
+        - text: Dashboard
+      - link "Events" [ref=e12] [cursor=pointer]:
+        - /url: https://ems-production-8c0e.up.railway.app/admin/events
+        - img [ref=e13]
+        - text: Events
+      - link "Participants" [ref=e15] [cursor=pointer]:
+        - /url: https://ems-production-8c0e.up.railway.app/admin/participants
+        - img [ref=e16]
+        - text: Participants
+      - link "Registrations" [ref=e18] [cursor=pointer]:
+        - /url: https://ems-production-8c0e.up.railway.app/admin/registrations
+        - img [ref=e19]
+        - text: Registrations
+    - generic [ref=e21]:
+      - button "Keluar" [ref=e23]:
+        - img [ref=e24]
+        - text: Keluar
+      - paragraph [ref=e26]: Admin EMS
+  - generic [ref=e27]:
+    - banner [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - button [ref=e31]:
+            - img [ref=e32]
+          - heading "Events" [level=1] [ref=e34]
+        - generic [ref=e36]: Campus Event Management
+    - main [ref=e37]:
+      - generic [ref=e38]:
+        - generic [ref=e39]:
+          - generic [ref=e40]:
+            - heading "Events" [level=2] [ref=e41]
+            - paragraph [ref=e42]: Kelola semua event dan pantau pendaftaran
+          - link "Tambah Event" [ref=e43] [cursor=pointer]:
+            - /url: https://ems-production-8c0e.up.railway.app/admin/events/create
+            - img [ref=e44]
+            - text: Tambah Event
+        - generic [ref=e46]:
+          - generic [ref=e47]:
+            - generic [ref=e48]:
+              - generic:
+                - img
+              - textbox "Cari event..." [ref=e49]
+            - generic [ref=e50]:
+              - link "Semua" [ref=e51] [cursor=pointer]:
+                - /url: https://ems-production-8c0e.up.railway.app/admin/events
+              - link "Career Fair" [ref=e52] [cursor=pointer]:
+                - /url: https://ems-production-8c0e.up.railway.app/admin/events?category=5
+              - link "Hackathon" [ref=e53] [cursor=pointer]:
+                - /url: https://ems-production-8c0e.up.railway.app/admin/events?category=7
+              - link "Lomba" [ref=e54] [cursor=pointer]:
+                - /url: https://ems-production-8c0e.up.railway.app/admin/events?category=3
+              - link "Pameran" [ref=e55] [cursor=pointer]:
+                - /url: https://ems-production-8c0e.up.railway.app/admin/events?category=4
+              - link "Pelatihan" [ref=e56] [cursor=pointer]:
+                - /url: https://ems-production-8c0e.up.railway.app/admin/events?category=6
+              - link "Seminar" [ref=e57] [cursor=pointer]:
+                - /url: https://ems-production-8c0e.up.railway.app/admin/events?category=2
+              - link "Workshop" [ref=e58] [cursor=pointer]:
+                - /url: https://ems-production-8c0e.up.railway.app/admin/events?category=1
+          - table [ref=e60]:
+            - rowgroup [ref=e61]:
+              - row "# Title Date Location Quota Status Registrations Actions" [ref=e62]:
+                - columnheader "#" [ref=e63]
+                - columnheader "Title" [ref=e64]
+                - columnheader "Date" [ref=e65]
+                - columnheader "Location" [ref=e66]
+                - columnheader "Quota" [ref=e67]
+                - columnheader "Status" [ref=e68]
+                - columnheader "Registrations" [ref=e69]
+                - columnheader "Actions" [ref=e70]
+            - rowgroup [ref=e71]:
+              - row "1 Workshop Web Development 15 Jul 2026, 09:00 Lab Komputer A, Gedung Teknik 30 Akan Datang 4 / 30 Lihat event Edit event Hapus event" [ref=e72]:
+                - cell "1" [ref=e73]
+                - cell "Workshop Web Development" [ref=e74]:
+                  - link "Workshop Web Development" [ref=e75] [cursor=pointer]:
+                    - /url: https://ems-production-8c0e.up.railway.app/admin/events/1
+                - cell "15 Jul 2026, 09:00" [ref=e76]
+                - cell "Lab Komputer A, Gedung Teknik" [ref=e77]
+                - cell "30" [ref=e78]
+                - cell "Akan Datang" [ref=e79]:
+                  - generic [ref=e80]: Akan Datang
+                - cell "4 / 30" [ref=e81]
+                - cell "Lihat event Edit event Hapus event" [ref=e82]:
+                  - generic [ref=e83]:
+                    - link "Lihat event" [ref=e84] [cursor=pointer]:
+                      - /url: https://ems-production-8c0e.up.railway.app/admin/events/1
+                      - img [ref=e85]
+                    - link "Edit event" [ref=e88] [cursor=pointer]:
+                      - /url: https://ems-production-8c0e.up.railway.app/admin/events/1/edit
+                      - img [ref=e89]
+                    - button "Hapus event" [ref=e92]:
+                      - img [ref=e93]
+              - row "2 Seminar Cyber Security 20 Jul 2026, 13:00 Auditorium Utama 100 Akan Datang 5 / 100 Lihat event Edit event Hapus event" [ref=e95]:
+                - cell "2" [ref=e96]
+                - cell "Seminar Cyber Security" [ref=e97]:
+                  - link "Seminar Cyber Security" [ref=e98] [cursor=pointer]:
+                    - /url: https://ems-production-8c0e.up.railway.app/admin/events/2
+                - cell "20 Jul 2026, 13:00" [ref=e99]
+                - cell "Auditorium Utama" [ref=e100]
+                - cell "100" [ref=e101]
+                - cell "Akan Datang" [ref=e102]:
+                  - generic [ref=e103]: Akan Datang
+                - cell "5 / 100" [ref=e104]
+                - cell "Lihat event Edit event Hapus event" [ref=e105]:
+                  - generic [ref=e106]:
+                    - link "Lihat event" [ref=e107] [cursor=pointer]:
+                      - /url: https://ems-production-8c0e.up.railway.app/admin/events/2
+                      - img [ref=e108]
+                    - link "Edit event" [ref=e111] [cursor=pointer]:
+                      - /url: https://ems-production-8c0e.up.railway.app/admin/events/2/edit
+                      - img [ref=e112]
+                    - button "Hapus event" [ref=e115]:
+                      - img [ref=e116]
+              - row "3 Lomba Debat Bahasa Inggris 25 Jun 2026, 08:00 Ruang Seminar Lantai 3 20 Selesai 4 / 20 Lihat event Edit event Hapus event" [ref=e118]:
+                - cell "3" [ref=e119]
+                - cell "Lomba Debat Bahasa Inggris" [ref=e120]:
+                  - link "Lomba Debat Bahasa Inggris" [ref=e121] [cursor=pointer]:
+                    - /url: https://ems-production-8c0e.up.railway.app/admin/events/3
+                - cell "25 Jun 2026, 08:00" [ref=e122]
+                - cell "Ruang Seminar Lantai 3" [ref=e123]
+                - cell "20" [ref=e124]
+                - cell "Selesai" [ref=e125]:
+                  - generic [ref=e126]: Selesai
+                - cell "4 / 20" [ref=e127]
+                - cell "Lihat event Edit event Hapus event" [ref=e128]:
+                  - generic [ref=e129]:
+                    - link "Lihat event" [ref=e130] [cursor=pointer]:
+                      - /url: https://ems-production-8c0e.up.railway.app/admin/events/3
+                      - img [ref=e131]
+                    - link "Edit event" [ref=e134] [cursor=pointer]:
+                      - /url: https://ems-production-8c0e.up.railway.app/admin/events/3/edit
+                      - img [ref=e135]
+                    - button "Hapus event" [ref=e138]:
+                      - img [ref=e139]
+              - row "4 Pameran Proyek Mahasiswa 05 Aug 2026, 10:00 Lobby Utama Kampus 50 Akan Datang 3 / 50 Lihat event Edit event Hapus event" [ref=e141]:
+                - cell "4" [ref=e142]
+                - cell "Pameran Proyek Mahasiswa" [ref=e143]:
+                  - link "Pameran Proyek Mahasiswa" [ref=e144] [cursor=pointer]:
+                    - /url: https://ems-production-8c0e.up.railway.app/admin/events/4
+                - cell "05 Aug 2026, 10:00" [ref=e145]
+                - cell "Lobby Utama Kampus" [ref=e146]
+                - cell "50" [ref=e147]
+                - cell "Akan Datang" [ref=e148]:
+                  - generic [ref=e149]: Akan Datang
+                - cell "3 / 50" [ref=e150]
+                - cell "Lihat event Edit event Hapus event" [ref=e151]:
+                  - generic [ref=e152]:
+                    - link "Lihat event" [ref=e153] [cursor=pointer]:
+                      - /url: https://ems-production-8c0e.up.railway.app/admin/events/4
+                      - img [ref=e154]
+                    - link "Edit event" [ref=e157] [cursor=pointer]:
+                      - /url: https://ems-production-8c0e.up.railway.app/admin/events/4/edit
+                      - img [ref=e158]
+                    - button "Hapus event" [ref=e161]:
+                      - img [ref=e162]
+              - row "5 Pelatihan Public Speaking 12 Aug 2026, 09:00 Ruang 401, Gedung Serbaguna 25 Akan Datang 3 / 25 Lihat event Edit event Hapus event" [ref=e164]:
+                - cell "5" [ref=e165]
+                - cell "Pelatihan Public Speaking" [ref=e166]:
+                  - link "Pelatihan Public Speaking" [ref=e167] [cursor=pointer]:
+                    - /url: https://ems-production-8c0e.up.railway.app/admin/events/5
+                - cell "12 Aug 2026, 09:00" [ref=e168]
+                - cell "Ruang 401, Gedung Serbaguna" [ref=e169]
+                - cell "25" [ref=e170]
+                - cell "Akan Datang" [ref=e171]:
+                  - generic [ref=e172]: Akan Datang
+                - cell "3 / 25" [ref=e173]
+                - cell "Lihat event Edit event Hapus event" [ref=e174]:
+                  - generic [ref=e175]:
+                    - link "Lihat event" [ref=e176] [cursor=pointer]:
+                      - /url: https://ems-production-8c0e.up.railway.app/admin/events/5
+                      - img [ref=e177]
+                    - link "Edit event" [ref=e180] [cursor=pointer]:
+                      - /url: https://ems-production-8c0e.up.railway.app/admin/events/5/edit
+                      - img [ref=e181]
+                    - button "Hapus event" [ref=e184]:
+                      - img [ref=e185]
+              - row "6 Hackathon 2026 10 Jun 2026, 07:00 Lab Komputer B & C 60 Selesai 8 / 60 Lihat event Edit event Hapus event" [ref=e187]:
+                - cell "6" [ref=e188]
+                - cell "Hackathon 2026" [ref=e189]:
+                  - link "Hackathon 2026" [ref=e190] [cursor=pointer]:
+                    - /url: https://ems-production-8c0e.up.railway.app/admin/events/6
+                - cell "10 Jun 2026, 07:00" [ref=e191]
+                - cell "Lab Komputer B & C" [ref=e192]
+                - cell "60" [ref=e193]
+                - cell "Selesai" [ref=e194]:
+                  - generic [ref=e195]: Selesai
+                - cell "8 / 60" [ref=e196]
+                - cell "Lihat event Edit event Hapus event" [ref=e197]:
+                  - generic [ref=e198]:
+                    - link "Lihat event" [ref=e199] [cursor=pointer]:
+                      - /url: https://ems-production-8c0e.up.railway.app/admin/events/6
+                      - img [ref=e200]
+                    - link "Edit event" [ref=e203] [cursor=pointer]:
+                      - /url: https://ems-production-8c0e.up.railway.app/admin/events/6/edit
+                      - img [ref=e204]
+                    - button "Hapus event" [ref=e207]:
+                      - img [ref=e208]
+              - row "7 Career Fair Kampus 01 Sep 2026, 09:00 Lapangan Parkir Utama 200 Akan Datang 3 / 200 Lihat event Edit event Hapus event" [ref=e210]:
+                - cell "7" [ref=e211]
+                - cell "Career Fair Kampus" [ref=e212]:
+                  - link "Career Fair Kampus" [ref=e213] [cursor=pointer]:
+                    - /url: https://ems-production-8c0e.up.railway.app/admin/events/7
+                - cell "01 Sep 2026, 09:00" [ref=e214]
+                - cell "Lapangan Parkir Utama" [ref=e215]
+                - cell "200" [ref=e216]
+                - cell "Akan Datang" [ref=e217]:
+                  - generic [ref=e218]: Akan Datang
+                - cell "3 / 200" [ref=e219]
+                - cell "Lihat event Edit event Hapus event" [ref=e220]:
+                  - generic [ref=e221]:
+                    - link "Lihat event" [ref=e222] [cursor=pointer]:
+                      - /url: https://ems-production-8c0e.up.railway.app/admin/events/7
+                      - img [ref=e223]
+                    - link "Edit event" [ref=e226] [cursor=pointer]:
+                      - /url: https://ems-production-8c0e.up.railway.app/admin/events/7/edit
+                      - img [ref=e227]
+                    - button "Hapus event" [ref=e230]:
+                      - img [ref=e231]

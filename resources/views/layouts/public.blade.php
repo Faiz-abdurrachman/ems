@@ -27,7 +27,7 @@
     <main class="py-8">
         @if (session('success'))
             <div class="mx-auto max-w-7xl px-6 mb-6">
-                <div class="torn-edge border-2 border-black bg-mint/30 p-5">
+                <div class="torn-edge border-2 border-black bg-emerald-300 p-5">
                     <div class="flex items-center justify-between">
                         <div class="flex items-center gap-2">
                             <svg class="h-5 w-5 text-ink" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>

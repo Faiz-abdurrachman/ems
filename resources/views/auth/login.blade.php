@@ -9,7 +9,7 @@
 <body class="h-full">
     <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
         <div class="sm:mx-auto sm:w-full sm:max-w-sm relative">
-            <div class="sticker mx-auto flex h-16 w-16 items-center justify-center border-2 border-black bg-gradient-to-br from-blue-400 to-blue-700 shadow-[4px_4px_0px_0px_#000]">
+            <div class="mx-auto flex h-16 w-16 items-center justify-center border-2 border-black bg-gradient-to-br from-blue-400 to-blue-700 shadow-[4px_4px_0px_0px_#000]">
                 <span class="text-3xl font-black text-white">E</span>
             </div>
             <div class="absolute -top-3 -right-2 text-2xl text-blue-500 font-black -rotate-12 select-none">✦</div>
@@ -25,7 +25,7 @@
                     @csrf
 
                     <div>
-                        <label for="email" class="sticker inline-block text-sm font-extrabold text-ink uppercase tracking-wider border-2 border-ink px-2 py-0.5 bg-gradient-to-r from-blue-400 to-blue-700 text-white mb-2">Email</label>
+                        <label for="email" class="block text-sm font-bold text-ink mb-2 uppercase tracking-wider">Email</label>
                         <input type="email" name="email" id="email" value="{{ old('email') }}"
                             class="mt-2 block w-full border-2 border-black px-4 py-3 text-sm font-bold bg-blue-50 focus:bg-blue-100 focus:outline-none transition-all {{ $errors->has('email') ? 'border-coral bg-coral/20' : '' }}"
                             placeholder="admin@ems.test" required autofocus>
@@ -35,10 +35,15 @@
                     </div>
 
                     <div>
-                        <label for="password" class="sticker inline-block text-sm font-extrabold text-ink uppercase tracking-wider border-2 border-ink px-2 py-0.5 bg-gradient-to-r from-blue-400 to-blue-700 text-white mb-2">Password</label>
-                        <input type="password" name="password" id="password"
-                            class="block w-full border-2 border-black px-4 py-3 text-sm font-bold bg-blue-50 focus:bg-blue-100 focus:outline-none transition-all {{ $errors->has('password') ? 'border-coral bg-coral/20' : '' }}"
-                            placeholder="••••••••" required>
+                        <label for="password" class="block text-sm font-bold text-ink mb-2 uppercase tracking-wider">Password</label>
+                        <div class="relative">
+                            <input type="password" name="password" id="password"
+                                class="block w-full border-2 border-black px-4 py-3 pr-12 text-sm font-bold bg-blue-50 focus:bg-blue-100 focus:outline-none transition-all {{ $errors->has('password') ? 'border-coral bg-coral/20' : '' }}"
+                                placeholder="••••••••" required>
+                            <button type="button" onclick="const p=document.getElementById('password'); p.type=p.type==='password'?'text':'password'; this.innerHTML=p.type==='password'?'<svg class=\'h-5 w-5\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'2\' d=\'M15 12a3 3 0 11-6 0 3 3 0 016 0z\'/><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'2\' d=\'M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z\'/></svg>':'<svg class=\'h-5 w-5\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'2\' d=\'M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.542-7a10.05 10.05 0 015.458-5.911m1.278-1.278A10.052 10.052 0 0112 5c4.478 0 8.268 2.943 9.542 7a10.05 10.05 0 01-2.012 3.44m-2.122 2.122a3 3 0 11-4.243-4.243m6.364 6.364l-14.14-14.14\'/></svg>'" class="absolute inset-y-0 right-0 flex items-center pr-3 text-ink/60 hover:text-ink cursor-pointer">
+                                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                            </button>
+                        </div>
                         @error('password')
                             <p class="mt-1.5 text-sm font-bold text-coral">{{ $message }}</p>
                         @enderror

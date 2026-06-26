@@ -30,7 +30,7 @@
 
             <main class="flex-1 overflow-y-auto p-6">
                 @if (session('success'))
-                    <div id="flash-message" class="mb-6 border-2 border-black bg-mint/30 p-4 shadow-[5px_5px_0px_0px_#000] flex items-center justify-between">
+                    <div id="flash-message" class="mb-6 border-2 border-black bg-emerald-300 p-4 shadow-[5px_5px_0px_0px_#000] flex items-center justify-between">
                         <div class="flex items-center gap-2">
                             <svg class="h-5 w-5 text-ink shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                             <p class="text-sm font-extrabold text-ink">{{ session('success') }}</p>

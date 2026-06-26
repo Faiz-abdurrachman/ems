@@ -10,7 +10,7 @@
                 <svg class="h-5 w-5 text-ink/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
             </div>
             <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari event..."
-                class="block w-full rounded-none border-2 border-black pl-10 pr-4 py-2.5 text-sm font-bold shadow-[4px_4px_0px_0px_#000] focus:bg-blue-50 focus:outline-none">
+                class="block w-full bg-white rounded-none border-2 border-black pl-10 pr-4 py-2.5 text-sm font-bold shadow-[4px_4px_0px_0px_#000] focus:bg-blue-50 focus:outline-none">
             @if(request('search'))
                 <a href="{{ route('home') }}" class="absolute inset-y-0 right-0 flex items-center pr-3 text-ink/60 hover:text-ink/70" aria-label="Hapus pencarian">
                     <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -22,9 +22,9 @@
     @if(isset($categories) && $categories->isNotEmpty())
         <div class="mx-auto max-w-7xl px-6 -mt-4 mb-6">
             <div class="flex flex-wrap justify-center gap-2">
-                <a href="{{ route('home') }}" class="rounded-none px-4 py-1.5 text-xs font-bold {{ !request('category') ? 'bg-gradient-to-r from-cyan-300 to-cyan-500 text-ink' : 'bg-white border-2 border-black text-ink/70 hover:bg-gray-100' }} transition-colors">Semua</a>
+                <a href="{{ route('home') }}" class="rounded-none px-4 py-1.5 text-xs font-bold {{ !request('category') ? 'bg-gradient-to-r from-cyan-300 to-cyan-500 text-ink border-2 border-black' : 'bg-white border-2 border-black text-ink/70 hover:bg-gray-100' }} transition-colors">Semua</a>
                 @foreach($categories as $cat)
-                    <a href="{{ route('home', ['category' => $cat->id]) }}" class="rounded-none px-4 py-1.5 text-xs font-bold {{ request('category') == $cat->id ? 'bg-gradient-to-r from-cyan-300 to-cyan-500 text-ink' : 'bg-white border-2 border-black text-ink/70 hover:bg-gray-100' }} transition-colors">{{ $cat->name }}</a>
+                    <a href="{{ route('home', ['category' => $cat->id]) }}" class="rounded-none px-4 py-1.5 text-xs font-bold {{ request('category') == $cat->id ? 'bg-gradient-to-r from-cyan-300 to-cyan-500 text-ink border-2 border-black' : 'bg-white border-2 border-black text-ink/70 hover:bg-gray-100' }} transition-colors">{{ $cat->name }}</a>
                 @endforeach
             </div>
         </div>

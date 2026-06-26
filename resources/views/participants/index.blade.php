@@ -51,7 +51,7 @@
             </a>
         </div>
     @else
-        <div class="overflow-hidden border-2 border-black bg-white shadow-[6px_6px_0px_0px_#000]">
+        <div class="overflow-x-auto border-2 border-black bg-white shadow-[6px_6px_0px_0px_#000]">
             <table class="min-w-full divide-y-2 divide-black">
                 <thead class="bg-[#FFD700] sticky top-0 z-10">
                     <tr>

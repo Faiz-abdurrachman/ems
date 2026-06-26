@@ -1,0 +1,119 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e6]: E
+      - generic [ref=e7]: EMS
+    - navigation [ref=e8]:
+      - link "Dashboard" [ref=e9] [cursor=pointer]:
+        - /url: https://ems-production-8c0e.up.railway.app/admin
+        - img [ref=e10]
+        - text: Dashboard
+      - link "Events" [ref=e12] [cursor=pointer]:
+        - /url: https://ems-production-8c0e.up.railway.app/admin/events
+        - img [ref=e13]
+        - text: Events
+      - link "Participants" [ref=e15] [cursor=pointer]:
+        - /url: https://ems-production-8c0e.up.railway.app/admin/participants
+        - img [ref=e16]
+        - text: Participants
+      - link "Registrations" [ref=e18] [cursor=pointer]:
+        - /url: https://ems-production-8c0e.up.railway.app/admin/registrations
+        - img [ref=e19]
+        - text: Registrations
+    - generic [ref=e21]:
+      - button "Keluar" [ref=e23]:
+        - img [ref=e24]
+        - text: Keluar
+      - paragraph [ref=e26]: Admin EMS
+  - generic [ref=e27]:
+    - banner [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - button [ref=e31]:
+            - img [ref=e32]
+          - heading "Dashboard" [level=1] [ref=e34]
+        - generic [ref=e36]: Campus Event Management
+    - main [ref=e37]:
+      - generic [ref=e38]:
+        - generic [ref=e39]:
+          - generic [ref=e40]:
+            - generic [ref=e41]: ✦
+            - generic [ref=e43]:
+              - img [ref=e44]
+              - paragraph [ref=e46]: Total Events
+              - paragraph [ref=e47]: "7"
+          - generic [ref=e50]:
+            - img [ref=e51]
+            - paragraph [ref=e53]: Total Participants
+            - paragraph [ref=e54]: "15"
+          - generic [ref=e57]:
+            - img [ref=e58]
+            - paragraph [ref=e60]: Total Registrations
+            - paragraph [ref=e61]: "30"
+          - generic [ref=e64]:
+            - img [ref=e65]
+            - paragraph [ref=e67]: Active Events
+            - paragraph [ref=e68]: "5"
+        - generic [ref=e69]:
+          - generic [ref=e70]:
+            - heading "Recent Registrations" [level=2] [ref=e72]
+            - table [ref=e74]:
+              - rowgroup [ref=e75]:
+                - row "Event Participant Date" [ref=e76]:
+                  - columnheader "Event" [ref=e77]
+                  - columnheader "Participant" [ref=e78]
+                  - columnheader "Date" [ref=e79]
+              - rowgroup [ref=e80]:
+                - row "Workshop Web Development Andi Pratama 23 Jun 2026" [ref=e81]:
+                  - cell "Workshop Web Development" [ref=e82]
+                  - cell "Andi Pratama" [ref=e83]
+                  - cell "23 Jun 2026" [ref=e84]
+                - row "Workshop Web Development Bunga Lestari 23 Jun 2026" [ref=e85]:
+                  - cell "Workshop Web Development" [ref=e86]
+                  - cell "Bunga Lestari" [ref=e87]
+                  - cell "23 Jun 2026" [ref=e88]
+                - row "Workshop Web Development Citra Dewi 23 Jun 2026" [ref=e89]:
+                  - cell "Workshop Web Development" [ref=e90]
+                  - cell "Citra Dewi" [ref=e91]
+                  - cell "23 Jun 2026" [ref=e92]
+                - row "Workshop Web Development Dimas Ardiansyah 23 Jun 2026" [ref=e93]:
+                  - cell "Workshop Web Development" [ref=e94]
+                  - cell "Dimas Ardiansyah" [ref=e95]
+                  - cell "23 Jun 2026" [ref=e96]
+                - row "Seminar Cyber Security Andi Pratama 23 Jun 2026" [ref=e97]:
+                  - cell "Seminar Cyber Security" [ref=e98]
+                  - cell "Andi Pratama" [ref=e99]
+                  - cell "23 Jun 2026" [ref=e100]
+          - generic [ref=e101]:
+            - heading "Upcoming" [level=2] [ref=e103]
+            - generic [ref=e104]:
+              - link "Workshop Web Development 15 Jul 2026 4 peserta" [ref=e106] [cursor=pointer]:
+                - /url: https://ems-production-8c0e.up.railway.app/admin/events/1
+                - paragraph [ref=e107]: Workshop Web Development
+                - generic [ref=e108]:
+                  - generic [ref=e109]: 15 Jul 2026
+                  - generic [ref=e110]: 4 peserta
+              - link "Seminar Cyber Security 20 Jul 2026 5 peserta" [ref=e114] [cursor=pointer]:
+                - /url: https://ems-production-8c0e.up.railway.app/admin/events/2
+                - paragraph [ref=e115]: Seminar Cyber Security
+                - generic [ref=e116]:
+                  - generic [ref=e117]: 20 Jul 2026
+                  - generic [ref=e118]: 5 peserta
+              - link "Pameran Proyek Mahasiswa 05 Aug 2026 3 peserta" [ref=e122] [cursor=pointer]:
+                - /url: https://ems-production-8c0e.up.railway.app/admin/events/4
+                - paragraph [ref=e123]: Pameran Proyek Mahasiswa
+                - generic [ref=e124]:
+                  - generic [ref=e125]: 05 Aug 2026
+                  - generic [ref=e126]: 3 peserta
+              - link "Pelatihan Public Speaking 12 Aug 2026 3 peserta" [ref=e130] [cursor=pointer]:
+                - /url: https://ems-production-8c0e.up.railway.app/admin/events/5
+                - paragraph [ref=e131]: Pelatihan Public Speaking
+                - generic [ref=e132]:
+                  - generic [ref=e133]: 12 Aug 2026
+                  - generic [ref=e134]: 3 peserta
+              - link "Career Fair Kampus 01 Sep 2026 3 peserta" [ref=e138] [cursor=pointer]:
+                - /url: https://ems-production-8c0e.up.railway.app/admin/events/7
+                - paragraph [ref=e139]: Career Fair Kampus
+                - generic [ref=e140]:
+                  - generic [ref=e141]: 01 Sep 2026
+                  - generic [ref=e142]: 3 peserta

@@ -1,0 +1,21 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e5]: E
+    - generic [ref=e6]: ✦
+    - heading "Admin Login" [level=2] [ref=e7]
+    - paragraph [ref=e8]: Event Management System
+  - generic [ref=e9]:
+    - generic [ref=e11]:
+      - generic [ref=e12]:
+        - generic [ref=e13]: Email
+        - textbox "Email" [active] [ref=e14]:
+          - /placeholder: admin@ems.test
+      - generic [ref=e15]:
+        - generic [ref=e16]: Password
+        - textbox "Password" [ref=e17]:
+          - /placeholder: ••••••••
+      - generic [ref=e18]:
+        - checkbox "Ingat saya" [ref=e19]
+        - generic [ref=e20]: Ingat saya
+      - button "Masuk" [ref=e21]
+    - paragraph [ref=e22]: EMS v1.0 — Laravel 13.16.1

@@ -84,7 +84,7 @@
                                         ];
                                         $statusLabels = [
                                             'upcoming' => 'Akan Datang',
-                                            'ongoing' => 'Berlangcyang',
+                                            'ongoing' => 'Berlangsung',
                                             'completed' => 'Selesai',
                                             'cancelled' => 'Dibatalkan',
                                         ];
